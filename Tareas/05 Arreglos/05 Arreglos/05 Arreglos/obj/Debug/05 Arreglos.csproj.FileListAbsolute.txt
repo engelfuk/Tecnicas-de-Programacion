@@ -1,0 +1,7 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\05 Arreglos\05 Arreglos\05 Arreglos\bin\Debug\05 Arreglos.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\05 Arreglos\05 Arreglos\05 Arreglos\bin\Debug\05 Arreglos.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\05 Arreglos\05 Arreglos\05 Arreglos\bin\Debug\05 Arreglos.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\05 Arreglos\05 Arreglos\05 Arreglos\obj\Debug\05 Arreglos.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\05 Arreglos\05 Arreglos\05 Arreglos\obj\Debug\05 Arreglos.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\05 Arreglos\05 Arreglos\05 Arreglos\obj\Debug\05 Arreglos.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\05 Arreglos\05 Arreglos\05 Arreglos\obj\Debug\05 Arreglos.pdb

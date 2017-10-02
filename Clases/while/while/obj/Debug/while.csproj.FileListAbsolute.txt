@@ -1,0 +1,7 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\while\while\bin\Debug\@while.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\while\while\bin\Debug\@while.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\while\while\bin\Debug\@while.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\while\while\obj\Debug\while.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\while\while\obj\Debug\while.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\while\while\obj\Debug\@while.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\while\while\obj\Debug\@while.pdb

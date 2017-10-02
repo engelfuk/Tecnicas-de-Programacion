@@ -1,0 +1,7 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Metodos\Metodos\Metodos\bin\Debug\Metodos.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Metodos\Metodos\Metodos\bin\Debug\Metodos.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Metodos\Metodos\Metodos\bin\Debug\Metodos.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Metodos\Metodos\Metodos\obj\Debug\Metodos.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Metodos\Metodos\Metodos\obj\Debug\Metodos.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Metodos\Metodos\Metodos\obj\Debug\Metodos.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Metodos\Metodos\Metodos\obj\Debug\Metodos.pdb

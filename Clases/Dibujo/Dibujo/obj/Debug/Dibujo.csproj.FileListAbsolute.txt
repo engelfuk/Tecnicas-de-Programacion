@@ -1,0 +1,10 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\bin\Debug\Dibujo.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\bin\Debug\Dibujo.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\bin\Debug\Dibujo.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\obj\Debug\Dibujo.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\obj\Debug\Dibujo.Form1.resources
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\obj\Debug\Dibujo.Properties.Resources.resources
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\obj\Debug\Dibujo.csproj.GenerateResource.Cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\obj\Debug\Dibujo.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\obj\Debug\Dibujo.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Dibujo\Dibujo\obj\Debug\Dibujo.pdb

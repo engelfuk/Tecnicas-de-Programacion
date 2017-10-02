@@ -1,0 +1,10 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\bin\Debug\Interfaz Grafica.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\bin\Debug\Interfaz Grafica.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\bin\Debug\Interfaz Grafica.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\obj\Debug\Interfaz Grafica.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\obj\Debug\Interfaz_Grafica.Form1.resources
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\obj\Debug\Interfaz_Grafica.Properties.Resources.resources
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\obj\Debug\Interfaz Grafica.csproj.GenerateResource.Cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\obj\Debug\Interfaz Grafica.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\obj\Debug\Interfaz Grafica.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Interfaz Grafica\Interfaz Grafica\Interfaz Grafica\obj\Debug\Interfaz Grafica.pdb

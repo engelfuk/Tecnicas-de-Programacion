@@ -1,0 +1,10 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\bin\Debug\Exepcion Forms.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\bin\Debug\Exepcion Forms.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\bin\Debug\Exepcion Forms.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\obj\Debug\Exepcion Forms.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\obj\Debug\Exepcion_Forms.Form1.resources
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\obj\Debug\Exepcion_Forms.Properties.Resources.resources
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\obj\Debug\Exepcion Forms.csproj.GenerateResource.Cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\obj\Debug\Exepcion Forms.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\obj\Debug\Exepcion Forms.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Exepcion Forms\Exepcion Forms\obj\Debug\Exepcion Forms.pdb

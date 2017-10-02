@@ -1,0 +1,7 @@
+C:\Users\engel\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.exe.config
+C:\Users\engel\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.exe
+C:\Users\engel\source\repos\ConsoleApp5\ConsoleApp5\bin\Debug\ConsoleApp5.pdb
+C:\Users\engel\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\CoulombEspecial.csprojResolveAssemblyReference.cache
+C:\Users\engel\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\CoulombEspecial.csproj.CoreCompileInputs.cache
+C:\Users\engel\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.exe
+C:\Users\engel\source\repos\ConsoleApp5\ConsoleApp5\obj\Debug\ConsoleApp5.pdb

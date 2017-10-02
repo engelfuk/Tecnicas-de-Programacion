@@ -1,0 +1,7 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\04 Ley Coulomb Switch Unidades\ColumbSwitch\ColumbSwitch\bin\Debug\ColumbSwitch.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\04 Ley Coulomb Switch Unidades\ColumbSwitch\ColumbSwitch\bin\Debug\ColumbSwitch.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\04 Ley Coulomb Switch Unidades\ColumbSwitch\ColumbSwitch\bin\Debug\ColumbSwitch.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\04 Ley Coulomb Switch Unidades\ColumbSwitch\ColumbSwitch\obj\Debug\ColumbSwitch.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\04 Ley Coulomb Switch Unidades\ColumbSwitch\ColumbSwitch\obj\Debug\ColumbSwitch.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\04 Ley Coulomb Switch Unidades\ColumbSwitch\ColumbSwitch\obj\Debug\ColumbSwitch.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\04 Ley Coulomb Switch Unidades\ColumbSwitch\ColumbSwitch\obj\Debug\ColumbSwitch.pdb

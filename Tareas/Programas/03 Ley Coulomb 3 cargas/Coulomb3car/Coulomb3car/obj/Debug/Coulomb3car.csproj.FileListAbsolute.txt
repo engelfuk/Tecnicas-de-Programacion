@@ -1,0 +1,7 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\03 Ley Coulomb 3 cargas\Coulomb3car\Coulomb3car\bin\Debug\Coulomb3car.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\03 Ley Coulomb 3 cargas\Coulomb3car\Coulomb3car\bin\Debug\Coulomb3car.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\03 Ley Coulomb 3 cargas\Coulomb3car\Coulomb3car\bin\Debug\Coulomb3car.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\03 Ley Coulomb 3 cargas\Coulomb3car\Coulomb3car\obj\Debug\Coulomb3car.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\03 Ley Coulomb 3 cargas\Coulomb3car\Coulomb3car\obj\Debug\Coulomb3car.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\03 Ley Coulomb 3 cargas\Coulomb3car\Coulomb3car\obj\Debug\Coulomb3car.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\03 Ley Coulomb 3 cargas\Coulomb3car\Coulomb3car\obj\Debug\Coulomb3car.pdb

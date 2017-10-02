@@ -1,0 +1,7 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\06 Coulomb Clases\06 Coulomb Clases\bin\Debug\06 Coulomb Clases.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\06 Coulomb Clases\06 Coulomb Clases\bin\Debug\06 Coulomb Clases.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\06 Coulomb Clases\06 Coulomb Clases\bin\Debug\06 Coulomb Clases.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\06 Coulomb Clases\06 Coulomb Clases\obj\Debug\06 Coulomb Clases.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\06 Coulomb Clases\06 Coulomb Clases\obj\Debug\06 Coulomb Clases.csproj.CoreCompileInputs.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\06 Coulomb Clases\06 Coulomb Clases\obj\Debug\06 Coulomb Clases.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\06 Coulomb Clases\06 Coulomb Clases\obj\Debug\06 Coulomb Clases.pdb

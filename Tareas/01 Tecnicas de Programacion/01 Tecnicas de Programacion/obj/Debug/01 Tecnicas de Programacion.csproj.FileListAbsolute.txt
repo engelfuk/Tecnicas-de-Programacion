@@ -1,0 +1,13 @@
+C:\Users\engel\OneDrive\7to Semestre\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\bin\Debug\01 Tecnicas de Programacion.exe.config
+C:\Users\engel\OneDrive\7to Semestre\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\bin\Debug\01 Tecnicas de Programacion.exe
+C:\Users\engel\OneDrive\7to Semestre\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\bin\Debug\01 Tecnicas de Programacion.pdb
+C:\Users\engel\OneDrive\7to Semestre\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\obj\Debug\01 Tecnicas de Programacion.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive\7to Semestre\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\obj\Debug\01 Tecnicas de Programacion.exe
+C:\Users\engel\OneDrive\7to Semestre\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\obj\Debug\01 Tecnicas de Programacion.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\bin\Debug\01 Tecnicas de Programacion.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\bin\Debug\01 Tecnicas de Programacion.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\bin\Debug\01 Tecnicas de Programacion.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\obj\Debug\01 Tecnicas de Programacion.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\obj\Debug\01 Tecnicas de Programacion.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\obj\Debug\01 Tecnicas de Programacion.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\01 Tecnicas de Programacion\01 Tecnicas de Programacion\obj\Debug\01 Tecnicas de Programacion.csproj.CoreCompileInputs.cache

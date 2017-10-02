@@ -1,0 +1,7 @@
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\02 Calculo Aproximado PI\02 Tarea\02 Tarea\bin\Debug\02 Tarea.exe.config
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\02 Calculo Aproximado PI\02 Tarea\02 Tarea\bin\Debug\02 Tarea.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\02 Calculo Aproximado PI\02 Tarea\02 Tarea\bin\Debug\02 Tarea.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\02 Calculo Aproximado PI\02 Tarea\02 Tarea\obj\Debug\02 Tarea.csprojResolveAssemblyReference.cache
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\02 Calculo Aproximado PI\02 Tarea\02 Tarea\obj\Debug\02 Tarea.exe
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\02 Calculo Aproximado PI\02 Tarea\02 Tarea\obj\Debug\02 Tarea.pdb
+C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Tareas\Programas\02 Calculo Aproximado PI\02 Tarea\02 Tarea\obj\Debug\02 Tarea.csproj.CoreCompileInputs.cache
