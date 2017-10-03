@@ -12,17 +12,18 @@ namespace Transformaciones
         static void Main(string[] args)
         {
             Portada portada = new Portada("  Multiplicacion Matrices");
-            double[,] mat1 = { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 }, { 12, 13, 14, 15 } };
-            double[,] mat2 = { { 0 }, { 1 }, { 2 }, { 3 } } ;
+            double[,] mat1 = { {1,2,3 }, {4,5,6 }, {7,8,9 } };
+            double[] vect = { 1,2,3};
 
-            OperadoresMatriciales m = new OperadoresMatriciales();
-            double[,] mat = m.MultMatMat(mat1,mat2);
+            Matrices m1 = new Matrices(mat1);
 
-            for (int j = 0; j < mat.GetLongLength(0); j++)
+            double[,] res = m1.MultMatMat(mat1);
+
+            for (int i = 0; i < 3; i++)
             {
-                for (int k = 0; k < mat.GetLongLength(1); k++)
+                for (int j = 0; j < 3; j++)
                 {
-                    Console.Write(mat[j,k] + " ");
+                    Console.Write(res[i,j] + "\t");
                 }
                 Console.WriteLine();
             }

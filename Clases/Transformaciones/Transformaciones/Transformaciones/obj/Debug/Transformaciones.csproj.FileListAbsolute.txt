@@ -5,3 +5,10 @@ C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\T
 C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\bin\Debug\Transformaciones.pdb
 C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\obj\Debug\Transformaciones.exe
 C:\Users\engel\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\obj\Debug\Transformaciones.pdb
+C:\Users\HP\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\bin\Debug\Transformaciones.exe.config
+C:\Users\HP\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\bin\Debug\Transformaciones.exe
+C:\Users\HP\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\bin\Debug\Transformaciones.pdb
+C:\Users\HP\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\obj\Debug\Transformaciones.csprojResolveAssemblyReference.cache
+C:\Users\HP\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\obj\Debug\Transformaciones.csproj.CoreCompileInputs.cache
+C:\Users\HP\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\obj\Debug\Transformaciones.exe
+C:\Users\HP\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\Semestre 7\Tecnicas de Programacion\Clases\Transformaciones\Transformaciones\Transformaciones\obj\Debug\Transformaciones.pdb
