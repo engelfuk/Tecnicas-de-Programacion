@@ -43,7 +43,7 @@ namespace transformaciones2
             pos1.Add(pt1);
             pos2.Add(pt2);
             CalculaLongitud();
-            CalculaAngulo();
+            //CalculaAngulo();
 
         }
 

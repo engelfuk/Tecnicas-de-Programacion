@@ -16,7 +16,7 @@ namespace transformaciones2
     {
         double angulo;
         double angulo2;
-        int i;
+        bool condicion = true;
         PlanoXY plano;
         Graphics fromGraphics;
         PointF origen = new PointF(0, 0);
@@ -41,21 +41,57 @@ namespace transformaciones2
             plano.DibujarPlano();
 
             angulo = 0;
-            i = 0;
+            
             #endregion
 
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-            angulo2 = 6 * angulo;
             
+
+            if (angulo < 68 && condicion)
+            {
+
+                main();
+
+                angulo++;
+                angulo2++;
+            }
+            else
+            {
+                angulo--;
+                angulo2--;
+
+                main();
+
+                condicion = false;
+
+                if (angulo == 0)
+                {
+                    condicion = true;
+                }
+
+            }
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+
+        }
+
+        public void main()
+        {
+            angulo2 = 2 * angulo;
             pictureBox1.Refresh();
             plano.DibujarPlano();
 
-            eslabon1.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Blue,20));
-            eslabon2.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Red,20));
+            eslabon1.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Blue, 20));
+            eslabon2.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Red, 20));
 
             eslabon1.RotEslabon(angulo, angulo2);
             eslabon2.RotEslabon(angulo, angulo2, eslabon1);
@@ -67,18 +103,6 @@ namespace transformaciones2
             labelX2.Text = eslabon2.GetPos2.X.ToString();
             labelY2.Text = eslabon2.GetPos2.Y.ToString();
             labelAngulo2.Text = angulo2.ToString();
-
-            i++;
-            angulo++;
-            
-
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
-
         }
 
         #region forms
@@ -126,9 +150,6 @@ namespace transformaciones2
 
         #endregion
 
-        public void ImprimeEtiquetas()
-        {
-
-        }
+       
     }
 }
