@@ -18,7 +18,7 @@ namespace Transformaciones
         #region Constructores
         public InsertarPlanoXY()
         {
-            this.fromBitmap = new Bitmap(3000, 3000);
+            this.fromBitmap = new Bitmap(2000, 2000);
             DibujarCuadricula();
             DibujarPlano();
         }
@@ -103,17 +103,7 @@ namespace Transformaciones
                 fromGraphics.DrawString(i.ToString(), new Font(FontFamily.GenericSansSerif, 25), new SolidBrush(Color.Gray), origenX , origenY + -i * divY);
             }
 
-            
-            
-       
-            
-            
-
-            
-
-            
-
-
+           
 
         }
         #endregion

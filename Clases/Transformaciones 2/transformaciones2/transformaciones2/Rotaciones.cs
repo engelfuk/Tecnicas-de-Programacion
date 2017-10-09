@@ -8,7 +8,7 @@ using Transformaciones;
 
 namespace transformaciones2
 {
-    class Rotaciones:InsertarPlanoXY
+    class Rotaciones
     {
         #region Variables Globales
         private Bitmap fromBitmap;
@@ -21,10 +21,10 @@ namespace transformaciones2
         #region Constructores
         public Rotaciones(double grados, double x, double y)
         {
-            this.fromBitmap = new Bitmap(3000, 3000);
+            this.fromBitmap = new Bitmap(2000, 2000);
             InsertarPlanoXY plano = new InsertarPlanoXY();
             this.fromBitmap = plano.GetBitmap;
-            Rotacion((float)GradosToRad(grados),(float)x, (float)y);
+            Rotacion((float)GradosToRad(grados), (float)x, (float)y);
         }
         #endregion
 
@@ -60,20 +60,20 @@ namespace transformaciones2
 
             this.x = (float)(x1 * Math.Cos(angulo) - y1 * Math.Sin(angulo));
             this.y = (float)(y1 * Math.Cos(angulo) + x1 * Math.Sin(angulo));
-            PointF origen = new PointF(x,y);
+            PointF origen = new PointF(x, y);
 
             fromGraphics.TranslateTransform(fromBitmap.Width / 2, fromBitmap.Height / 2);
-            fromGraphics.ScaleTransform(1,-1);
+            fromGraphics.ScaleTransform(1, -1);
 
-            fromGraphics.DrawLine(new Pen(Color.Black,10), 0, 0, x, y);
+            fromGraphics.DrawLine(new Pen(Color.Black, 10), 0, 0, x, y);
             //return new PointF(x,y);
 
-            
+
 
 
         }
 
-        
+
 
         #endregion
 

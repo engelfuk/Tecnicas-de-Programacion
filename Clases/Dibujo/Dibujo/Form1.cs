@@ -35,11 +35,11 @@ namespace Dibujo
             //papel.DrawRectangle(lapiz,box);
             //papel.FillRectangle(Brushes.Red, box);
             //papel.FillEllipse(Brushes.Purple, box);
-            int margen = Convert.ToInt16(textBox1.Text);
-            int w = pictureBox1.Width - 2 * margen;
-            int h = pictureBox1.Height - 2 * margen;
+            //int margen = Convert.ToInt16(textBox1.Text);
+            //int w = pictureBox1.Width - 2 * margen;
+            //int h = pictureBox1.Height - 2 * margen;
 
-            Rectangle caja = new Rectangle(margen, margen, w, h);
+            Rectangle caja = new Rectangle(10, 10, 20,30);
             papel.DrawRectangle(lapiz, caja);
 
             //int cX = pictureBox1.Width / 2;
