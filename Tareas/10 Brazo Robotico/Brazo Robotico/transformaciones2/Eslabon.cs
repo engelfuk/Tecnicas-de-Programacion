@@ -144,7 +144,7 @@ namespace transformaciones2
 
         }
 
-        public void RotEslabon(double th1, double th2)
+        public void RotEslabon1(double th1, double th2)
         {
 
             th1 *= Math.PI / 180;
@@ -161,7 +161,7 @@ namespace transformaciones2
             
         }
 
-        public void RotEslabon(double th1, double th2, Eslabon eslabonAnterior)
+        public void RotEslabon2(double th1, double th2, Eslabon eslabonAnterior)
         {
             
             pos1.Add(eslabonAnterior.GetListaPos2.Last());
@@ -179,7 +179,23 @@ namespace transformaciones2
             
         }
 
+        public void RotEslabon3(double th1, double th2, double th3, Eslabon eslabonAnterior, Eslabon eslabonAnteAnterior)
+        {
 
+            pos1.Add(eslabonAnterior.GetListaPos2.Last());
+
+            th1 *= Math.PI / 180;
+            th2 *= Math.PI / 180;
+            th3 *= Math.PI / 180;
+
+            PointF pt = new PointF(
+                (float)(eslabonAnteAnterior.GetLongitud * Math.Cos(th1) + eslabonAnterior.GetLongitud  * Math.Cos(th1 + th2) + longitud * Math.Cos(th1 + th2 - th3)),
+                (float)(eslabonAnteAnterior.GetLongitud * Math.Sin(th1) + eslabonAnterior.GetLongitud * Math.Sin(th1 + th2) + longitud * Math.Sin(th1 + th2 - th3)));
+
+            pos2.Add(pt);
+
+
+        }
 
         #endregion
 

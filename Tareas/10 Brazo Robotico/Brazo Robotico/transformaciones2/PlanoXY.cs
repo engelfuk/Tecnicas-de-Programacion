@@ -26,7 +26,7 @@ namespace Transformaciones
         public PlanoXY(PictureBox pictureBox, Graphics graphics)
         {
             this.picturebox = pictureBox;
-            this.picturebox.BackColor = Color.White;
+            this.picturebox.BackColor = Color.Transparent;
             this.fromGraphics = graphics;
             this.fromGraphics.TranslateTransform(pictureBox.Width/2,pictureBox.Height/2);
             this.fromGraphics.ScaleTransform(1, -1);
