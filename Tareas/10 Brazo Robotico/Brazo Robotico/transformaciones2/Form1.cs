@@ -83,9 +83,9 @@ namespace transformaciones2
             pictureBox1.Refresh();
             plano.DibujarPlano();
 
-            eslabon1.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Blue, 20));
-            eslabon2.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Red, 20));
-            eslabon3.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Green, 20));
+            eslabon1.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Blue, 10));
+            eslabon2.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Red, 10));
+            eslabon3.DibujaEslabon(pictureBox1, fromGraphics, new Pen(Color.Green, 10));
 
             eslabon1.RotEslabon1(angulo, angulo2);
             eslabon2.RotEslabon2(angulo, angulo2, eslabon1);
