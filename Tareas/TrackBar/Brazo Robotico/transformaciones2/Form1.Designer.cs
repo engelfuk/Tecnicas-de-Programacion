@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_Reproducir = new System.Windows.Forms.Button();
             this.labelY3 = new System.Windows.Forms.Label();
             this.labelX3 = new System.Windows.Forms.Label();
             this.labelAngulo3 = new System.Windows.Forms.Label();
@@ -59,7 +60,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Btn_Reproducir = new System.Windows.Forms.Button();
+            this.Btn_borrar_ptos = new System.Windows.Forms.Button();
+            this.Btn_sig_pto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
@@ -71,6 +73,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Controls.Add(this.Btn_sig_pto);
+            this.panel1.Controls.Add(this.Btn_borrar_ptos);
             this.panel1.Controls.Add(this.Btn_Reproducir);
             this.panel1.Controls.Add(this.labelY3);
             this.panel1.Controls.Add(this.labelX3);
@@ -99,6 +103,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(182, 930);
             this.panel1.TabIndex = 0;
+            // 
+            // Btn_Reproducir
+            // 
+            this.Btn_Reproducir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Btn_Reproducir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Reproducir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btn_Reproducir.Location = new System.Drawing.Point(19, 504);
+            this.Btn_Reproducir.Name = "Btn_Reproducir";
+            this.Btn_Reproducir.Size = new System.Drawing.Size(151, 31);
+            this.Btn_Reproducir.TabIndex = 23;
+            this.Btn_Reproducir.Text = "Reproducir";
+            this.Btn_Reproducir.UseVisualStyleBackColor = false;
+            this.Btn_Reproducir.Click += new System.EventHandler(this.Btn_Reproducir_Click);
             // 
             // labelY3
             // 
@@ -393,18 +410,28 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Btn_Reproducir
+            // Btn_borrar_ptos
             // 
-            this.Btn_Reproducir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btn_Reproducir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Reproducir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Reproducir.Location = new System.Drawing.Point(38, 494);
-            this.Btn_Reproducir.Name = "Btn_Reproducir";
-            this.Btn_Reproducir.Size = new System.Drawing.Size(110, 31);
-            this.Btn_Reproducir.TabIndex = 23;
-            this.Btn_Reproducir.Text = "Reproducir";
-            this.Btn_Reproducir.UseVisualStyleBackColor = false;
-            this.Btn_Reproducir.Click += new System.EventHandler(this.Btn_Reproducir_Click);
+            this.Btn_borrar_ptos.BackColor = System.Drawing.Color.Red;
+            this.Btn_borrar_ptos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btn_borrar_ptos.Location = new System.Drawing.Point(19, 579);
+            this.Btn_borrar_ptos.Name = "Btn_borrar_ptos";
+            this.Btn_borrar_ptos.Size = new System.Drawing.Size(151, 32);
+            this.Btn_borrar_ptos.TabIndex = 24;
+            this.Btn_borrar_ptos.Text = "Borrar Trayect.";
+            this.Btn_borrar_ptos.UseVisualStyleBackColor = false;
+            this.Btn_borrar_ptos.Click += new System.EventHandler(this.Btn_borrar_ptos_Click);
+            // 
+            // Btn_sig_pto
+            // 
+            this.Btn_sig_pto.Location = new System.Drawing.Point(19, 541);
+            this.Btn_sig_pto.Name = "Btn_sig_pto";
+            this.Btn_sig_pto.Size = new System.Drawing.Size(151, 32);
+            this.Btn_sig_pto.TabIndex = 25;
+            this.Btn_sig_pto.Text = "Sig. Punto";
+            this.Btn_sig_pto.UseVisualStyleBackColor = true;
+            this.Btn_sig_pto.Visible = false;
+            this.Btn_sig_pto.Click += new System.EventHandler(this.Btn_sig_pto_Click);
             // 
             // Form1
             // 
@@ -465,6 +492,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.Button Btn_Reproducir;
+        private System.Windows.Forms.Button Btn_sig_pto;
+        private System.Windows.Forms.Button Btn_borrar_ptos;
     }
 }
 

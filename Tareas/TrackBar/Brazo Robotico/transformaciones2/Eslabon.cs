@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,7 @@ namespace transformaciones2
             this.pos2 = new List<PointF>();
             this.pt1Inicial = pt1;
             this.pt2Inicial = pt2;
-            
+
             pos1.Add(pt1);
             pos2.Add(pt2);
             CalculaLongitud();
@@ -53,7 +54,7 @@ namespace transformaciones2
         #endregion
 
         #region Sets y Gets
-        
+
 
 
 
@@ -113,12 +114,12 @@ namespace transformaciones2
         #region Metodos
 
         #region Publicos
-       
+
         public Bitmap MergeBitMaps(Bitmap img1, Bitmap img2, Bitmap img3)
         {
-            Bitmap img = new Bitmap(img1.Width, img1.Height); 
+            Bitmap img = new Bitmap(img1.Width, img1.Height);
             Graphics fromGraphics = Graphics.FromImage(img);
-            
+
             fromGraphics.DrawImage(img1, 0, 0);
             fromGraphics.DrawImage(img2, 0, 0);
             fromGraphics.DrawImage(img3, 0, 0);
@@ -128,34 +129,34 @@ namespace transformaciones2
             return img;
 
         }
-       
+
         public Bitmap DibujaBrazo(Eslabon eslabon1, Eslabon eslabon2, Eslabon eslabon3)
         {
-            return MergeBitMaps(eslabon1.DibujaEslabon(), eslabon2.DibujaEslabon(), eslabon3.DibujaEslabon()); 
+            return MergeBitMaps(eslabon1.DibujaEslabon(), eslabon2.DibujaEslabon(), eslabon3.DibujaEslabon());
         }
 
 
 
-        public Bitmap DibujaEslabon( )
+        public Bitmap DibujaEslabon()
         {
             Bitmap myBitmap = new Bitmap(800, 800);
             Graphics fromGraphics = Graphics.FromImage(myBitmap);
-            
+
             fromGraphics.TranslateTransform(myBitmap.Width / 2, myBitmap.Height / 2);
             fromGraphics.ScaleTransform(1, -1);
             fromGraphics.DrawLine(pluma, pos1.Last(), pos2.Last());
-            fromGraphics.DrawLine(new Pen(Color.White,pluma.Width/2), pos1.Last(), pos2.Last());
+            fromGraphics.DrawLine(new Pen(Color.White, pluma.Width / 2), pos1.Last(), pos2.Last());
             fromGraphics.FillEllipse(new SolidBrush(Color.Gray), pos1.Last().X - pluma.Width, pos1.Last().Y - pluma.Width, (2 * pluma.Width), (2 * pluma.Width));
             fromGraphics.FillEllipse(new SolidBrush(Color.Gray), pos2.Last().X - pluma.Width, pos2.Last().Y - pluma.Width, (2 * pluma.Width), (2 * pluma.Width));
 
             return myBitmap;
         }
 
-        
+
 
         public void RotEslabon1(double th1)
         {
-            
+
             th1 *= Math.PI / 180;
 
             pos1.Add(new PointF(0, 0));
@@ -166,12 +167,12 @@ namespace transformaciones2
                 (float)(longitud * Math.Sin(th1)));
 
             pos2.Add(pt);
-            
+
         }
 
         public void RotEslabon2(double th1, double th2, Eslabon eslabonAnterior)
         {
-            
+
             pos1.Add(eslabonAnterior.GetListaPos2.Last());
 
             th1 *= Math.PI / 180;
@@ -184,7 +185,7 @@ namespace transformaciones2
 
             pos2.Add(pt);
 
-            
+
         }
 
         public void RotEslabon3(double th1, double th2, double th3, Eslabon eslabonAnterior, Eslabon eslabonAnteAnterior)
@@ -197,7 +198,7 @@ namespace transformaciones2
             th3 *= Math.PI / 180;
 
             PointF pt = new PointF(
-                (float)(eslabonAnteAnterior.GetLongitud * Math.Cos(th1) + eslabonAnterior.GetLongitud  * Math.Cos(th1 + th2) + longitud * Math.Cos(th1 + th2 - th3)),
+                (float)(eslabonAnteAnterior.GetLongitud * Math.Cos(th1) + eslabonAnterior.GetLongitud * Math.Cos(th1 + th2) + longitud * Math.Cos(th1 + th2 - th3)),
                 (float)(eslabonAnteAnterior.GetLongitud * Math.Sin(th1) + eslabonAnterior.GetLongitud * Math.Sin(th1 + th2) + longitud * Math.Sin(th1 + th2 - th3)));
 
             pos2.Add(pt);

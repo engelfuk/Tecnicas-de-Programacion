@@ -22,8 +22,8 @@ namespace transformaciones2
         Eslabon eslabon1;
         Eslabon eslabon2;
         Eslabon eslabon3;
-        StreamWriter escrituraPuntos;
         
+
         double th1;
         double th2;
         double th3;
@@ -42,15 +42,16 @@ namespace transformaciones2
             PointF pt2 = new PointF(200, 0);
             PointF pt3 = new PointF(250, 0);
 
-            plumaNegra = new Pen(Color.Black,20);
+            plumaNegra = new Pen(Color.Black, 20);
             plumaGreen = new Pen(Color.Green, 20);
             plumaRed = new Pen(Color.Red, 20);
-            eslabon1 = new Eslabon(pt0, pt1 , plumaNegra);
+            eslabon1 = new Eslabon(pt0, pt1, plumaNegra);
             eslabon2 = new Eslabon(pt1, pt2, plumaRed);
             eslabon3 = new Eslabon(pt2, pt3, plumaGreen);
 
+            File.Delete(ruta);
+
             
-            escrituraPuntos = File.CreateText(ruta);
 
             #endregion
 
@@ -60,6 +61,7 @@ namespace transformaciones2
         private void button1_Click(object sender, EventArgs e)
         {
             main();
+            File.Delete(ruta);
         }
 
         public void main()
@@ -70,8 +72,9 @@ namespace transformaciones2
             th2 = trackBar2.Value;
             th3 = trackBar3.Value;
 
-
-            //StreamWriter escrituraPuntos =  File.AppendText(ruta);
+            StreamWriter escrituraPuntos;
+            //escrituraPuntos = File.CreateText(ruta);
+            escrituraPuntos =  File.AppendText(ruta);
             escrituraPuntos.Write(th1);
             escrituraPuntos.Write("\t");
             escrituraPuntos.Write(th2);
@@ -82,11 +85,12 @@ namespace transformaciones2
 
             pictureBox1.Image = eslabon1.DibujaBrazo(eslabon1, eslabon2, eslabon3);
             eslabon1.RotEslabon1(th1);
-            eslabon2.RotEslabon2(th1,th2, eslabon1);
-            eslabon3.RotEslabon3(th1,th2,th3,eslabon2, eslabon1);
-            
+            eslabon2.RotEslabon2(th1, th2, eslabon1);
+            eslabon3.RotEslabon3(th1, th2, th3, eslabon2, eslabon1);
 
-            
+            escrituraPuntos.Close();
+
+
         }
 
 
@@ -180,29 +184,11 @@ namespace transformaciones2
 
         private void Btn_Reproducir_Click(object sender, EventArgs e)
         {
-            escrituraPuntos.Close();
+            
             ReproduceTrayectoria();
         }
 
-        public void MainReproducir()
-        {
-            ImprimeEtiquetas();
-
-
-            escrituraPuntos.Write(th1);
-            escrituraPuntos.Write("\t");
-            escrituraPuntos.Write(th2);
-            escrituraPuntos.Write("\t");
-            escrituraPuntos.Write(th3);
-            escrituraPuntos.WriteLine("");
-
-
-            pictureBox1.Image = eslabon1.DibujaBrazo(eslabon1, eslabon2, eslabon3);
-            eslabon1.RotEslabon1(th1);
-            eslabon2.RotEslabon2(th1, th2, eslabon1);
-            eslabon3.RotEslabon3(th1, th2, th3, eslabon2, eslabon1);
-        }
-
+        
 
         public void ReproduceTrayectoria()
         {
@@ -211,6 +197,8 @@ namespace transformaciones2
             StreamReader lectura = File.OpenText(ruta);
             string cadena;
             cadena = lectura.ReadLine();
+
+
             while (cadena != null)
             {
                 campos = cadena.Split(separadores);
@@ -221,20 +209,19 @@ namespace transformaciones2
                 eslabon1.RotEslabon1(th1);
                 eslabon2.RotEslabon2(th1, th2, eslabon1);
                 eslabon3.RotEslabon3(th1, th2, th3, eslabon2, eslabon1);
-                
+
                 cadena = lectura.ReadLine();
 
                 ImprimeEtiquetas();
                 pictureBox1.Image = eslabon1.DibujaBrazo(eslabon1, eslabon2, eslabon3);
 
-                WaitNSeconds(1);
-               
+                MessageBox.Show("Siguiente Punto");
+
             }
 
             lectura.Close();
-            MessageBox.Show("Terminado");
 
-            
+
 
         }
 
@@ -248,5 +235,14 @@ namespace transformaciones2
             }
         }
 
+        private void Btn_sig_pto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_borrar_ptos_Click(object sender, EventArgs e)
+        {
+            File.Delete(ruta);
+        }
     }
 }
