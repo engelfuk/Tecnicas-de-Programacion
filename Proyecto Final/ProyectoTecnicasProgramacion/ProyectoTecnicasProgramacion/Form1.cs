@@ -28,12 +28,39 @@ namespace ProyectoTecnicasProgramacion
 
         int caso = 0;
         string algorithum = "3"; //3 right, 2 left
-        
+
+        Graphics fromGrphics;
+        Bitmap myBitmap;
+        Pen myPen;
+        List<PointF> points = new List<PointF>();
+        PointF[] puntos = new PointF[1];
+        int i, x, y;
         #endregion
 
 
         private void AccessFrom(string action)
         {
+            //Drawing
+            string direction = "";
+            if (radioAbajo.Checked)
+            {
+                direction = radioAbajo.Text;
+            }
+            if (radioArriba.Checked)
+            {
+                direction = radioArriba.Text;
+            }
+            if (radioDerecha.Checked)
+            {
+                direction = radioDerecha.Text;
+            }
+            if (radioIzq.Checked)
+            {
+                direction = radioIzq.Text;
+            }
+            DrawPath(direction);
+
+
 
             //Left of right algorithum (3: right | 2: left)
             if (radioLeft.Checked) algorithum = "2";
@@ -78,7 +105,7 @@ namespace ProyectoTecnicasProgramacion
                     break;
                 case 8:
                     if (cruce) caso = 9;
-                    if (rightCorner) caso = 11;
+                    //if (rightCorner) caso = 11;
                     else caso = 0;
                     break;
                 case 9:
@@ -104,6 +131,32 @@ namespace ProyectoTecnicasProgramacion
 
         }
 
+        public void DrawPath(string direction)
+        {
+
+            if (direction == "derecha")
+            {
+                points.Add(new PointF(points.Last().X + 1, points.Last().Y));
+            }
+            if (direction == "izquierda")
+            {
+                points.Add(new PointF(points.Last().X - 1, points.Last().Y));
+            }
+            if (direction == "arriba")
+            {
+                points.Add(new PointF(points.Last().X, points.Last().Y + 1));
+            }
+            if (direction == "abajo")
+            {
+                points.Add(new PointF(points.Last().X, points.Last().Y - 1));
+            }
+
+
+
+            fromGrphics.DrawLine(myPen, points[points.Count - 2], points.Last());
+            pictureBox1.Image = myBitmap;
+        }
+
         private void InterruptionAccess(string action)
         {
             DelegateAccess access = new DelegateAccess(AccessFrom);
@@ -119,9 +172,6 @@ namespace ProyectoTecnicasProgramacion
             
 
         }
-
-        
-
 
         private void connectArduino()
         {
@@ -216,6 +266,12 @@ namespace ProyectoTecnicasProgramacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            myBitmap = new Bitmap(500, 500);
+            fromGrphics = Graphics.FromImage(myBitmap);
+            fromGrphics.TranslateTransform(myBitmap.Width / 2, myBitmap.Height / 2);
+            fromGrphics.ScaleTransform(1, -1);
+            myPen = new Pen(Color.Black, 3);
+            points.Add(new PointF(0, 0));
 
         }
 
@@ -229,13 +285,10 @@ namespace ProyectoTecnicasProgramacion
             port.Write(strOut);
         }
 
-    
-
         private void Received(object sender, SerialDataReceivedEventArgs e)
         {
             InterruptionAccess(port.ReadExisting());
         }
-
 
         private void SendData(string data)
         {

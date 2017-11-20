@@ -54,10 +54,18 @@
             this.groupAlgorithum = new System.Windows.Forms.GroupBox();
             this.radioLeft = new System.Windows.Forms.RadioButton();
             this.radioRight = new System.Windows.Forms.RadioButton();
+            this.groupPath = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioArriba = new System.Windows.Forms.RadioButton();
+            this.radioAbajo = new System.Windows.Forms.RadioButton();
+            this.radioDerecha = new System.Windows.Forms.RadioButton();
+            this.radioIzq = new System.Windows.Forms.RadioButton();
             this.groupSensors.SuspendLayout();
             this.groupConnection.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupAlgorithum.SuspendLayout();
+            this.groupPath.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupSensors
@@ -172,7 +180,7 @@
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(254, 425);
+            this.btnFind.Location = new System.Drawing.Point(254, 469);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(193, 42);
             this.btnFind.TabIndex = 2;
@@ -189,7 +197,7 @@
             this.groupBox3.Controls.Add(this.labMotors);
             this.groupBox3.Controls.Add(this.labIn);
             this.groupBox3.Controls.Add(this.txtIn);
-            this.groupBox3.Location = new System.Drawing.Point(13, 249);
+            this.groupBox3.Location = new System.Drawing.Point(13, 293);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(441, 170);
             this.groupBox3.TabIndex = 3;
@@ -227,7 +235,7 @@
             // 
             // txtMotors
             // 
-            this.txtMotors.Location = new System.Drawing.Point(7, 88);
+            this.txtMotors.Location = new System.Drawing.Point(6, 87);
             this.txtMotors.Name = "txtMotors";
             this.txtMotors.Size = new System.Drawing.Size(427, 22);
             this.txtMotors.TabIndex = 3;
@@ -294,11 +302,76 @@
             this.radioRight.Text = "Derecha";
             this.radioRight.UseVisualStyleBackColor = true;
             // 
+            // groupPath
+            // 
+            this.groupPath.Controls.Add(this.pictureBox1);
+            this.groupPath.Location = new System.Drawing.Point(460, 12);
+            this.groupPath.Name = "groupPath";
+            this.groupPath.Size = new System.Drawing.Size(514, 530);
+            this.groupPath.TabIndex = 5;
+            this.groupPath.TabStop = false;
+            this.groupPath.Text = "Trayectoria";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // radioArriba
+            // 
+            this.radioArriba.AutoSize = true;
+            this.radioArriba.Location = new System.Drawing.Point(13, 257);
+            this.radioArriba.Name = "radioArriba";
+            this.radioArriba.Size = new System.Drawing.Size(63, 21);
+            this.radioArriba.TabIndex = 6;
+            this.radioArriba.Text = "arriba";
+            this.radioArriba.UseVisualStyleBackColor = true;
+            // 
+            // radioAbajo
+            // 
+            this.radioAbajo.AutoSize = true;
+            this.radioAbajo.Location = new System.Drawing.Point(82, 257);
+            this.radioAbajo.Name = "radioAbajo";
+            this.radioAbajo.Size = new System.Drawing.Size(61, 21);
+            this.radioAbajo.TabIndex = 7;
+            this.radioAbajo.Text = "abajo";
+            this.radioAbajo.UseVisualStyleBackColor = true;
+            // 
+            // radioDerecha
+            // 
+            this.radioDerecha.AutoSize = true;
+            this.radioDerecha.Checked = true;
+            this.radioDerecha.Location = new System.Drawing.Point(151, 257);
+            this.radioDerecha.Name = "radioDerecha";
+            this.radioDerecha.Size = new System.Drawing.Size(78, 21);
+            this.radioDerecha.TabIndex = 8;
+            this.radioDerecha.TabStop = true;
+            this.radioDerecha.Text = "derecha";
+            this.radioDerecha.UseVisualStyleBackColor = true;
+            // 
+            // radioIzq
+            // 
+            this.radioIzq.AutoSize = true;
+            this.radioIzq.Location = new System.Drawing.Point(235, 257);
+            this.radioIzq.Name = "radioIzq";
+            this.radioIzq.Size = new System.Drawing.Size(84, 21);
+            this.radioIzq.TabIndex = 9;
+            this.radioIzq.Text = "izquierda";
+            this.radioIzq.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 482);
+            this.ClientSize = new System.Drawing.Size(989, 547);
+            this.Controls.Add(this.radioIzq);
+            this.Controls.Add(this.radioDerecha);
+            this.Controls.Add(this.radioAbajo);
+            this.Controls.Add(this.radioArriba);
+            this.Controls.Add(this.groupPath);
             this.Controls.Add(this.groupAlgorithum);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnFind);
@@ -306,6 +379,7 @@
             this.Controls.Add(this.groupSensors);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Robot Dibuja Trayectoria";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupSensors.ResumeLayout(false);
@@ -314,7 +388,10 @@
             this.groupBox3.PerformLayout();
             this.groupAlgorithum.ResumeLayout(false);
             this.groupAlgorithum.PerformLayout();
+            this.groupPath.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -344,6 +421,12 @@
         private System.Windows.Forms.GroupBox groupAlgorithum;
         private System.Windows.Forms.RadioButton radioLeft;
         private System.Windows.Forms.RadioButton radioRight;
+        private System.Windows.Forms.GroupBox groupPath;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton radioArriba;
+        private System.Windows.Forms.RadioButton radioAbajo;
+        private System.Windows.Forms.RadioButton radioDerecha;
+        private System.Windows.Forms.RadioButton radioIzq;
     }
 }
 
