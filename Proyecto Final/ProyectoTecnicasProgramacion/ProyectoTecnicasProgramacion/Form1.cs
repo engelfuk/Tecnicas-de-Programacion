@@ -28,39 +28,42 @@ namespace ProyectoTecnicasProgramacion
 
         int caso = 0;
         string algorithum = "3"; //3 right, 2 left
+        bool rightCorner;
+        bool cross;
+        bool alley;
 
         Graphics fromGrphics;
         Bitmap myBitmap;
         Pen myPen;
         List<PointF> points = new List<PointF>();
         PointF[] puntos = new PointF[1];
-        int i, x, y;
+        string direction;
         #endregion
 
 
         private void AccessFrom(string action)
         {
             //Drawing
-            string direction = "";
-            if (radioAbajo.Checked)
-            {
-                direction = radioAbajo.Text;
-            }
-            if (radioArriba.Checked)
-            {
-                direction = radioArriba.Text;
-            }
-            if (radioDerecha.Checked)
-            {
-                direction = radioDerecha.Text;
-            }
-            if (radioIzq.Checked)
-            {
-                direction = radioIzq.Text;
-            }
-            DrawPath(direction);
+            //string direction = "";
+            //if (radioAbajo.Checked)
+            //{
+            //    direction = radioAbajo.Text;
+            //}
+            //if (radioArriba.Checked)
+            //{
+            //    direction = radioArriba.Text;
+            //}
+            //if (radioDerecha.Checked)
+            //{
+            //    direction = radioDerecha.Text;
+            //}
+            //if (radioIzq.Checked)
+            //{
+            //    direction = radioIzq.Text;
+            //}
+            //DrawPath(direction);
 
-
+            
 
             //Left of right algorithum (3: right | 2: left)
             if (radioLeft.Checked) algorithum = "2";
@@ -68,67 +71,51 @@ namespace ProyectoTecnicasProgramacion
             
             ReadData(action);
             txtNode.Text = caso.ToString();
-            bool cruce = (S4 == "1" && S5 == "1" && S6 == "1" && S7 == "1") || (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "1") || (S4 == "0" && S5 == "0" && S6 == "0" && S7 == "0");
-            bool rightCorner = (S4 == "1" && S5 == "0" && S6 == "1" && S7 == "1");
+            rightCorner =  (S4 == "0" && S5 == "0" && S6 == "1" && S7 == "1") || (S4 == "1" && S5 == "0" && S6 == "1" && S7 == "1");
+            cross = (S1 == "1" && S2 == "1" && S3 == "1" && S4 == "1" && S5 == "0" && S6 == "0" && S7 == "1") || (S1 == "1" && S2 == "1" && S3 == "0" && S4 == "1" && S5 == "0" && S6 == "0" && S7 == "1");// || (S1 == "0" && S2 == "1" && S3 == "1" && S4 == "1" && S5 == "0" && S6 == "0" && S7 == "1");
+            alley = (S1 == "0" && S2 == "0" && S3 == "0" && S4 == "0" && S5 == "0" && S6 == "0" && S7 == "0");
             switch (caso)
             {
                 case 0:
-                    caso = SensoresDelanteros();
+                    LineFollower();
+                    direction = "arriba";
+                    DrawPath(direction);
                     break;
-                case 1:
-                    if (cruce) caso = 9;
-                    else caso = 0;
-                    break;
-                case 2:
-                    if (cruce) caso = 9;
-                    else caso = 0;
-                    break;
-                case 3:
-                    if (cruce) caso = 9;
-                    else caso = 0;
-                    break;
-                case 4:
-                    if (cruce) caso = 9;
-                    else caso = 0;
-                    break;
-                case 5:
-                    if (cruce) caso = 9;
-                    else caso = 0;
-                    break;
-                case 6:
-                    if (cruce) caso = 9;
-                    else caso = 0;
-                    break;
-                case 7:
-                    if (cruce) caso = 9;
-                    else caso = 0;
-                    break;
-                case 8:
-                    if (cruce) caso = 9;
-                    //if (rightCorner) caso = 11;
-                    else caso = 0;
-                    break;
-                case 9:
-                    SendData(algorithum);
+                
+                    
+                    
+                case 9://Right Corner
+                    SendData("3");
+                    direction = "derecha";
                     if (S2 == "0") caso = 9;
                     else if(S2 == "1")
                     {
                         caso = 0;
                     }
+                    DrawPath(direction);
                     break;
                 case 10: // Stop the Robot
                     SendData("4");
                     break;
-                case 11: //Right Corner
-                    SendData("3");
+                case 11: //Cross
+                    SendData(algorithum);
+                    if (algorithum == "3")
+                    {
+                        direction = "derecha";
+                    }
+                    if (algorithum == "2")
+                    {
+                        direction = "izquierda";
+                    }
                     if (S2 == "0") caso = 11;
                     else if (S2 == "1")
                     {
                         caso = 0;
                     }
+                    DrawPath(direction);
                     break;
             }
-
+            
         }
 
         public void DrawPath(string direction)
@@ -175,6 +162,7 @@ namespace ProyectoTecnicasProgramacion
 
         private void connectArduino()
         {
+
             try
             {
                 isConnected = true;
@@ -201,7 +189,17 @@ namespace ProyectoTecnicasProgramacion
                 
             }
 
-            
+            //Drawing Path Initialization
+            myBitmap = new Bitmap(500, 500);
+            fromGrphics = Graphics.FromImage(myBitmap);
+            fromGrphics.Clear(Color.White);
+            fromGrphics.TranslateTransform(myBitmap.Width / 2, myBitmap.Height / 2);
+            fromGrphics.ScaleTransform(1, -1);
+            myPen = new Pen(Color.Black, 3);
+            points.Add(new PointF(0, 0));
+
+
+
         }
 
         private void getAvailablePorts()
@@ -250,6 +248,8 @@ namespace ProyectoTecnicasProgramacion
                 port.Close();
                 btnConnection.Text = "Conectar";
                 disableControls();
+                fromGrphics.Clear(Color.White);
+                pictureBox1.Image = myBitmap;
             }
             catch (Exception)
             {
@@ -266,12 +266,7 @@ namespace ProyectoTecnicasProgramacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            myBitmap = new Bitmap(500, 500);
-            fromGrphics = Graphics.FromImage(myBitmap);
-            fromGrphics.TranslateTransform(myBitmap.Width / 2, myBitmap.Height / 2);
-            fromGrphics.ScaleTransform(1, -1);
-            myPen = new Pen(Color.Black, 3);
-            points.Add(new PointF(0, 0));
+
 
         }
 
@@ -527,54 +522,82 @@ namespace ProyectoTecnicasProgramacion
             
         }
 
-        public int SensoresDelanteros()
+        public void LineFollower()
         {
             #region Sensores Delanteros
-            
-
-            if (S1 == "1" && S2 == "1" && S3 == "1")//1
+            if (alley)
+            {
+                caso = 11;
+                return;
+            }
+            if (cross)
+            {
+                caso = 11;
+                return;
+            }
+            else if (S1 == "1" && S2 == "1" && S3 == "1")//1
             {
                 SendData("1");
-                return 1;
-            }else if (S1 == "1" && S2 == "1" && S3 == "0")//2
+                caso = 0;
+                return;
+            }
+            else if (S1 == "1" && S2 == "1" && S3 == "0")//2
+            {
+                SendData("1");
+                caso = 0;
+                return;
+            }
+            else if (S1 == "1" && S2 == "0" && S3 == "1")//3
             {
                 
 
+                SendData("1");
+                caso = 0;
+                return;
+            }
+            else if (S1 == "1" && S2 == "0" && S3 == "0")//4
+            {
                 SendData("2");
-                return 2;
-            }else if (S1 == "1" && S2 == "0" && S3 == "1")//3
+                caso = 0;
+                return;
+            }
+            else if (S1 == "0" && S2 == "1" && S3 == "1")//5
             {
                 
-
                 SendData("1");
-                return 3;
-            }else if (S1 == "1" && S2 == "0" && S3 == "0")//4
+                caso = 0;
+                return;
+            }
+            else if (S1 == "0" && S2 == "1" && S3 == "0")//6
             {
-                SendData("2");
-                return 4;
-            }else if (S1 == "0" && S2 == "1" && S3 == "1")//5
+                
+                SendData("1");
+                caso = 0;
+                return;
+            }
+            else if (S1 == "0" && S2 == "0" && S3 == "1")//7
             {
                 
                 SendData("3");
-                return 5;
-            }else if (S1 == "0" && S2 == "1" && S3 == "0")//6
+                caso = 0;
+                return;
+            }
+            else if (S1 == "0" && S2 == "0" && S3 == "0")//8
             {
                 
-                SendData("1");
-                return 6;
+                if (rightCorner)
+                {
+                    caso = 9;
+                }
+                else
+                {
+                    SendData("1");
+                    caso = 0;
+                }
+                return;
 
-            }else if (S1 == "0" && S2 == "0" && S3 == "1")//7
-            {
-                
-                SendData("3");
-                return 7;
             }
-            else//8
-            {
-                
-                SendData("1");
-                return 8;
-            }
+
 
             #endregion
 

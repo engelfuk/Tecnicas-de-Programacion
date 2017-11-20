@@ -180,7 +180,7 @@
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(254, 469);
+            this.btnFind.Location = new System.Drawing.Point(254, 491);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(193, 42);
             this.btnFind.TabIndex = 2;
@@ -199,16 +199,17 @@
             this.groupBox3.Controls.Add(this.txtIn);
             this.groupBox3.Location = new System.Drawing.Point(13, 293);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(441, 170);
+            this.groupBox3.Size = new System.Drawing.Size(441, 192);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "IO";
             // 
             // txtNode
             // 
+            this.txtNode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.15652F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNode.Location = new System.Drawing.Point(6, 136);
             this.txtNode.Name = "txtNode";
-            this.txtNode.Size = new System.Drawing.Size(306, 22);
+            this.txtNode.Size = new System.Drawing.Size(306, 40);
             this.txtNode.TabIndex = 6;
             // 
             // labNode
@@ -225,9 +226,9 @@
             this.btnStop.BackColor = System.Drawing.SystemColors.Control;
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStop.ForeColor = System.Drawing.Color.Black;
-            this.btnStop.Location = new System.Drawing.Point(325, 122);
+            this.btnStop.Location = new System.Drawing.Point(326, 136);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(109, 36);
+            this.btnStop.Size = new System.Drawing.Size(109, 40);
             this.btnStop.TabIndex = 4;
             this.btnStop.Text = "Enviar";
             this.btnStop.UseVisualStyleBackColor = false;
@@ -283,23 +284,23 @@
             // radioLeft
             // 
             this.radioLeft.AutoSize = true;
+            this.radioLeft.Checked = true;
             this.radioLeft.Location = new System.Drawing.Point(10, 49);
             this.radioLeft.Name = "radioLeft";
             this.radioLeft.Size = new System.Drawing.Size(84, 21);
             this.radioLeft.TabIndex = 1;
-            this.radioLeft.Text = "Izquierda";
+            this.radioLeft.TabStop = true;
+            this.radioLeft.Text = "izquierda";
             this.radioLeft.UseVisualStyleBackColor = true;
             // 
             // radioRight
             // 
             this.radioRight.AutoSize = true;
-            this.radioRight.Checked = true;
             this.radioRight.Location = new System.Drawing.Point(10, 22);
             this.radioRight.Name = "radioRight";
-            this.radioRight.Size = new System.Drawing.Size(80, 21);
+            this.radioRight.Size = new System.Drawing.Size(78, 21);
             this.radioRight.TabIndex = 0;
-            this.radioRight.TabStop = true;
-            this.radioRight.Text = "Derecha";
+            this.radioRight.Text = "derecha";
             this.radioRight.UseVisualStyleBackColor = true;
             // 
             // groupPath
