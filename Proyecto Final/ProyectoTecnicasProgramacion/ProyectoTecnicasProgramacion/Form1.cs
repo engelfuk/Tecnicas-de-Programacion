@@ -49,6 +49,16 @@ namespace ProyectoTecnicasProgramacion
 
         int numCruce;
 
+        bool SigueLinea1;
+        bool SigueLinea2;
+        bool SigueLinea3;
+        bool SigueLinea4;
+        bool SigueLinea5;
+        bool SigueLinea6;
+        bool SigueLinea7;
+        bool SigueLinea8;
+
+
         #endregion
 
 
@@ -59,180 +69,151 @@ namespace ProyectoTecnicasProgramacion
             else algorithum = "3";
             
             ReadData(action);
-            bool comprobar = (S1 == "0" && S2 == "1" && S3 == "0" && S4 == "1" && S5 == "0" && S6 == "0" && S7 == "1");
+            SigueLinea1 = (S1 == "1" && S2 == "1" && S3 == "1");
+            SigueLinea2 = (S1 == "1" && S2 == "1" && S3 == "0");
+            SigueLinea3 = (S1 == "1" && S2 == "0" && S3 == "1");
+            SigueLinea4 = (S1 == "1" && S2 == "0" && S3 == "0");
+            SigueLinea5 = (S1 == "0" && S2 == "1" && S3 == "1");
+            SigueLinea6 = (S1 == "0" && S2 == "1" && S3 == "0");//Caso ideal
+            SigueLinea7 = (S1 == "0" && S2 == "0" && S3 == "1");
+            SigueLinea8 = (S1 == "0" && S2 == "0" && S3 == "0");
+            leftCorner  = (S4 == "0" && S5 == "0" && S6 == "1" && S7 == "1");
+            rightCorner = (S4 == "0" && S5 == "1" && S6 == "0" && S7 == "1");
+            cross       = (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "1") || (S4 == "1" && S5 == "1" && S6 == "1" && S7 == "1");
+            alley       = (S4 == "0" && S5 == "0" && S6 == "0" && S7 == "0");
+            if (numCruce == 2)
+            {
+                regreso = true;
+            }
             switch (caso)
             {
                 case 0:
                     txtNode.Text = caso.ToString();
-                    LineFollower();
-                    break;
-                case 1://Right Corner
-                    txtNode.Text = caso.ToString();
-                    SetDirection();
-                    cruces.Add("Esquina Derecha");
-                    cmbCruces.Items.Add("Esquina Derecha");
-                    //SendData("4");
-                    //MessageBox.Show("Esquina Derecha");
-                    caso = 9;
-                    break;
-                case 2://Cruce
-                    txtNode.Text = caso.ToString();
-                    SetDirection();
-                    cruces.Add("Cruce");
-                    cmbCruces.Items.Add("Cruz");
                     SendData("4");
-                    MessageBox.Show("Cruce");
-                    caso = 16;
+                    if (SigueLinea1) caso = 1;
+                    if (SigueLinea2) caso = 2;
+                    if (SigueLinea3) caso = 3;
+                    if (SigueLinea4) caso = 4;
+                    if (SigueLinea5) caso = 5;
+                    if (SigueLinea6) caso = 6;
+                    if (SigueLinea7) caso = 7;
+                    if (SigueLinea8) caso = 8;
                     break;
-                case 3://Left Corner
+                case 1:
                     txtNode.Text = caso.ToString();
-                    if (direccion == "arriba")
-                    {
-                        direccion = "izquierda";
-                    }
-                    else if (direccion == "abajo")
-                    {
-                        direccion = "derecha";
-                    }
-                    cruces.Add("Esquina Izquierda");
-                    cmbCruces.Items.Add("Esquina derecha");
-                    SendData("4");
-                    MessageBox.Show("Esquina Izquierda");
-                    caso = 5;
+                    SendData("1");
+                    if (!SigueLinea1) caso = 0;
                     break;
-                case 4://Alley
-                    regreso = true;
-                    numCruce = 0;
+                case 2:
                     txtNode.Text = caso.ToString();
-                    if (direccion == "izquierda")
-                    {
-                        direccion = "derecha";
-                    }else if(direccion == "derecha")
-                    {
-                        direccion = "izquierda";
-                    }
-                    cruces.Add("Callejon");
-                    cmbCruces.Items.Add("Callejon");
-                    SendData("4");
-                    MessageBox.Show("Callejon");
-                    caso = 9;
+                    SendData("1");
+                    if (!SigueLinea2) caso = 0;
+                    if (cross) caso = 9;
+                    if (alley) caso = 9;
+                    if (leftCorner) caso = 10;
+                    if (rightCorner) caso = 9;
                     break;
-                case 6://L Derecha
+                case 3:
                     txtNode.Text = caso.ToString();
-                    SetDirection();
-                    cruces.Add("L Dereceha");
-                    cmbCruces.Items.Add("L Derecha");
-                    SendData("4");
-                    MessageBox.Show("L Derecha");
-                    caso = 16;
+                    SendData("1");
+                    if (!SigueLinea3) caso = 0;
                     break;
-                case 7://L Izquierda
-                    txtNode.Text = caso.ToString();
-                    cruces.Add("L Izquierda");
-                    cmbCruces.Items.Add("L Izquierda");
-                    SendData("4");
-                    MessageBox.Show("L Izquierda");
-                    caso = 16;
-                    break;
-                case 5://Girar a la Izquierda
+                case 4:
                     txtNode.Text = caso.ToString();
                     SendData("2");
-                    if (S2 == "1" && S4== "1" )
-                    {
-                        caso = 0;
-                    }
+                    if (!SigueLinea4) caso = 0;
                     break;
-                case 9://Girar a la Derecha
+                case 5:
+                    txtNode.Text = caso.ToString();
+                    SendData("1");
+                    if (!SigueLinea5) caso = 0;
+                    break;
+                case 6:
+                    txtNode.Text = caso.ToString();
+                    SendData("1");
+                    if (!SigueLinea6) caso = 0;
+                    break;
+                case 7:
                     txtNode.Text = caso.ToString();
                     SendData("3");
-                    if (S2 == "1" && S4 == "1" )
-                    {
-                        caso = 0;
-                        
-                    }
+                    if (!SigueLinea7) caso = 0;
+                    //if (rightCorner) caso = 9;
                     break;
-                
-                case 12: //Verificar Cruz
-                    //SendData("4");
-                    //MessageBox.Show("Verificar Cruz");
-                    SendData("1");
+                case 8:
                     txtNode.Text = caso.ToString();
-                    if (S1 == "1"  || S2 == "1" || S3 == "1")
+                    
+                    if (((S4 == "1" || S7 == "1") && (S5 == "0" && S6 == "0")) || (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "0"))//Correccion Trayeectoria
                     {
                         SendData("1");
-                        caso = 12;
-                        return;
-
-                    }
-                    if ((S1 == "0" && S2 == "0" && S3 == "0" && S4 == "1" && S5 == "1" && S6 == "1" && S4 == "1") || (S1 == "0" && S2 == "0" && S3 == "0" && S4 == "1" && S5 == "0" && S6 == "1" && S4 == "1") || (S1 == "0" && S2 == "0" && S3 == "0" && S4 == "0" && S5 == "1" && S6 == "1" && S4 == "1") || (S1 == "0" && S2 == "0" && S3 == "0" && S4 == "1" && S5 == "0" && S6 == "1" && S4 == "1"))
-                    {
-                        //SendData("3");
-                        caso = 2;
+                        caso = 0;
                         return;
                     }
-                    break;
-                case 13: //Verificar Esquina Izquierda
-                    txtNode.Text = caso.ToString();
-                    //SendData("4");
-                    //MessageBox.Show("Verificar Esquina Izquierda");
-                    SendData("1");
-                    
-                    if (S1 == "0"  && S2 == "0" && S3 == "0" && S4 == "0")
+                    if ((S4 == "0" && S5 == "0" && S6 == "1" && S7 == "0") || (S4 == "1" && S7 == "1" && S5 == "1" && S6 == "0"))//Correccion Trayectoria
                     {
-                        caso = 3;
+                        SendData("2");
+                        caso = 0;
                         return;
                     }
-                    if (S3 == "1" || S6 == "1")
-                    {
-                        caso = 12;
-                        return;
-                    }
-                    if (S5 == "1" && S2 =="0")
-                    {
-                        caso = 3;
-                        return;
-                    }
-                    if (S1 == "0" && S2 == "1" && S3 == "0" && S4 == "1" && S7 == "1") //L Izquierda
-                    {
-                        
-                        caso = 7;
-                        return;
-                    }
-                    
-                    break;
-                case 14: //Verificar Esquina Derecha
-                    txtNode.Text = caso.ToString();
-                    //SendData("4");
-                    //MessageBox.Show("Verificar Esquina Derecha");
-                    SendData("1");
-                    if (S1 == "0" && S2 == "0" && S3 == "0" && S4 == "0")//Esquina Derecha
-                    {
-                        caso = 9;
-                    }
-                    if (S1 == "0" && S2 == "1" && S3 == "0" && S4=="1") //L Derecha
+                    if ((S4 == "0" && S5 == "1" && S6 == "0" && S7 == "0") || (S4 == "1" && S7 == "1" && S5 == "0" && S6 == "1"))//Correccion Trayectoria
                     {
                         SendData("3");
-                        Thread.Sleep(650);
-                        caso = 6;
+                        caso = 0;
+                        return;
                     }
-                    if (S4 == "0" && S5 == "0" && S6 == "1" && S7 == "1")
+                    if (leftCorner)//Vuelta Derecha
                     {
-                        caso = 1;
+                        caso = 9;
+                        return;
                     }
+                    if (rightCorner)//Vuelta Izquierda
+                    {
+                        caso = 10;
+                        return;
+                    }
+                    if (cross)
+                    {
+                        caso = 12;
+                        return;
+                    }
+                    if (alley)
+                    {
+                        caso = 12;
+                        return;
+                    }
+                    
                     break;
-                case 15://Robot Parado
+
+                case 9: //Girar Derecha
+                    txtNode.Text = caso.ToString();
+                    SendData("3");
+                    if (S2 == "1")
+                    {
+                        caso = 0;
+                    }
+                    
+                    break;
+                case 10: //Girar Izquierda
+                    txtNode.Text = caso.ToString();
+                    SendData("2");
+                    if (S2 == "1")
+                    {
+                        caso = 0;
+                    }
+                    
+                    break;
+
+                case 11://Robot Parado
                     txtNode.Text = caso.ToString();
                     SendData("4");
                     break;
-                case 16://Trayectoria Mesas
+                case 12://Trayectoria Mesas
                     txtNode.Text = caso.ToString();
-                    //SendData("4");
-                    //MessageBox.Show("Caso 16");
+                    cmbCruces.Items.Add("Trayectoria");
                     if (!regreso)
                     {
                         if (trayectoriaIda[numCruce] == "2")
                         {
-                            caso = 5;
+                            caso = 10;
                             numCruce++;
                         }
                         else if (trayectoriaIda[numCruce] == "3")
@@ -243,9 +224,10 @@ namespace ProyectoTecnicasProgramacion
                         break;
                     }else if (regreso)
                     {
+                        MessageBox.Show("El Robot Llego a la Mesa");
                         if (trayectoriaRegreso[numCruce] == "2")
                         {
-                            caso = 5;
+                            caso = 10;
                             numCruce++;
                         }
                         else if (trayectoriaRegreso[numCruce] == "3")
@@ -256,8 +238,15 @@ namespace ProyectoTecnicasProgramacion
                         
                     }
                     break;
+                case 13:
+                    txtNode.Text = caso.ToString();
+                    SendData("4");
+                    MessageBox.Show("El Robot Llegó a la Mesa");
+                    regreso = true;
+                    caso = 9;
+                    break;
             }
-            DibujarLinea();
+            
         }
 
         
@@ -338,7 +327,7 @@ namespace ProyectoTecnicasProgramacion
             points.Add(new PointF(0, 0));
             caso = 0;
 
-
+            
         }
         private void getAvailablePorts()
         {
@@ -778,98 +767,7 @@ namespace ProyectoTecnicasProgramacion
 
 
         }
-        public void LineFollower()
-        {
-
-            rightCorner = (S1 == "0" && S2 == "1" && S3 == "1" && S4 == "1" && S5 == "0" && S6 == "0" && S7 == "1");
-            leftCorner = (S1 == "1" && S2 == "1" && S3 == "0" && S4 == "1" && S5 == "0" && S6 == "0" && S7 == "1");
-            cross = (S1 == "1" && S2 == "1" && S3 == "1" && S4 == "1" && S5 == "0" && S6 == "0" && S7 == "1") || (S1 == "1" && S2 == "1" && S3 == "1" && S4 == "0" && S5 == "0" && S6 == "0" && S7 == "1") || (S1 == "1" && S2 == "1" && S3 == "1" && S4 == "0" && S5 == "0" && S6 == "0" && S7 == "0");
-            alley = (S1 == "0" && S2 == "0" && S3 == "0" && S4 == "0" && S5 == "0" && S6 == "0" && S7 == "0");
-
-            #region Sensores Delanteros
-            if (rightCorner)
-            {
-
-                caso = 14;
-
-                return;
-            }
-            if (leftCorner)
-            {
-
-                caso = 13;
-
-                return;
-            }
-            if (alley)
-            {
-                caso = 4;
-                return;
-            }
-            if (cross)
-            {
-                caso = 12;
-                return;
-            }
-            else if (S1 == "1" && S2 == "1" && S3 == "1")//1
-            {
-                SendData("1");
-                caso = 0;
-                return;
-            }
-            else if (S1 == "1" && S2 == "1" && S3 == "0")//2
-            {
-                SendData("2");
-                caso = 0;
-                return;
-            }
-            else if (S1 == "1" && S2 == "0" && S3 == "1")//3
-            {
-
-
-                SendData("1");
-                caso = 0;
-                return;
-            }
-            else if (S1 == "1" && S2 == "0" && S3 == "0")//4
-            {
-                SendData("2");
-                caso = 0;
-                return;
-            }
-            else if (S1 == "0" && S2 == "1" && S3 == "1")//5
-            {
-
-                SendData("3");
-                caso = 0;
-                return;
-            }
-            else if (S1 == "0" && S2 == "1" && S3 == "0")//6
-            {
-
-                SendData("1");
-                caso = 0;
-                return;
-            }
-            else if (S1 == "0" && S2 == "0" && S3 == "1")//7
-            {
-
-                SendData("3");
-                caso = 0;
-                return;
-            }
-            else if (S1 == "0" && S2 == "0" && S3 == "0")//8
-            {
-                SendData("1");
-                caso = 0;
-
-
-            }
-
-
-            #endregion
-
-        }
+       
         public void SetDirection()
         {
             if (direccion == "arriba")
