@@ -51,19 +51,19 @@
             this.labIn = new System.Windows.Forms.Label();
             this.txtIn = new System.Windows.Forms.TextBox();
             this.port = new System.IO.Ports.SerialPort(this.components);
-            this.groupAlgorithum = new System.Windows.Forms.GroupBox();
-            this.radioLeft = new System.Windows.Forms.RadioButton();
-            this.radioRight = new System.Windows.Forms.RadioButton();
+            this.groupMesas = new System.Windows.Forms.GroupBox();
+            this.radioMesa2 = new System.Windows.Forms.RadioButton();
+            this.radioMesa1 = new System.Windows.Forms.RadioButton();
             this.groupPath = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.radioArriba = new System.Windows.Forms.RadioButton();
-            this.radioAbajo = new System.Windows.Forms.RadioButton();
-            this.radioDerecha = new System.Windows.Forms.RadioButton();
-            this.radioIzq = new System.Windows.Forms.RadioButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cmbCruces = new System.Windows.Forms.ComboBox();
+            this.radioMesa3 = new System.Windows.Forms.RadioButton();
+            this.radioMesa4 = new System.Windows.Forms.RadioButton();
             this.groupSensors.SuspendLayout();
             this.groupConnection.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupAlgorithum.SuspendLayout();
+            this.groupMesas.SuspendLayout();
             this.groupPath.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -165,6 +165,7 @@
             this.cboCom.Name = "cboCom";
             this.cboCom.Size = new System.Drawing.Size(187, 24);
             this.cboCom.TabIndex = 1;
+            this.cboCom.Text = "COM6";
             // 
             // btnConnection
             // 
@@ -230,7 +231,7 @@
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(109, 40);
             this.btnStop.TabIndex = 4;
-            this.btnStop.Text = "Enviar";
+            this.btnStop.Text = "Detener";
             this.btnStop.UseVisualStyleBackColor = false;
             this.btnStop.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -270,45 +271,47 @@
             // 
             this.port.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.Received);
             // 
-            // groupAlgorithum
+            // groupMesas
             // 
-            this.groupAlgorithum.Controls.Add(this.radioLeft);
-            this.groupAlgorithum.Controls.Add(this.radioRight);
-            this.groupAlgorithum.Location = new System.Drawing.Point(13, 133);
-            this.groupAlgorithum.Name = "groupAlgorithum";
-            this.groupAlgorithum.Size = new System.Drawing.Size(200, 100);
-            this.groupAlgorithum.TabIndex = 4;
-            this.groupAlgorithum.TabStop = false;
-            this.groupAlgorithum.Text = "Tipo de Algoritmo";
+            this.groupMesas.Controls.Add(this.radioMesa4);
+            this.groupMesas.Controls.Add(this.radioMesa3);
+            this.groupMesas.Controls.Add(this.radioMesa2);
+            this.groupMesas.Controls.Add(this.radioMesa1);
+            this.groupMesas.Location = new System.Drawing.Point(13, 133);
+            this.groupMesas.Name = "groupMesas";
+            this.groupMesas.Size = new System.Drawing.Size(200, 123);
+            this.groupMesas.TabIndex = 4;
+            this.groupMesas.TabStop = false;
+            this.groupMesas.Text = "Selecciona una Mesa";
             // 
-            // radioLeft
+            // radioMesa2
             // 
-            this.radioLeft.AutoSize = true;
-            this.radioLeft.Checked = true;
-            this.radioLeft.Location = new System.Drawing.Point(10, 49);
-            this.radioLeft.Name = "radioLeft";
-            this.radioLeft.Size = new System.Drawing.Size(84, 21);
-            this.radioLeft.TabIndex = 1;
-            this.radioLeft.TabStop = true;
-            this.radioLeft.Text = "izquierda";
-            this.radioLeft.UseVisualStyleBackColor = true;
+            this.radioMesa2.AutoSize = true;
+            this.radioMesa2.Location = new System.Drawing.Point(10, 49);
+            this.radioMesa2.Name = "radioMesa2";
+            this.radioMesa2.Size = new System.Drawing.Size(72, 21);
+            this.radioMesa2.TabIndex = 1;
+            this.radioMesa2.Text = "Mesa 2";
+            this.radioMesa2.UseVisualStyleBackColor = true;
             // 
-            // radioRight
+            // radioMesa1
             // 
-            this.radioRight.AutoSize = true;
-            this.radioRight.Location = new System.Drawing.Point(10, 22);
-            this.radioRight.Name = "radioRight";
-            this.radioRight.Size = new System.Drawing.Size(78, 21);
-            this.radioRight.TabIndex = 0;
-            this.radioRight.Text = "derecha";
-            this.radioRight.UseVisualStyleBackColor = true;
+            this.radioMesa1.AutoSize = true;
+            this.radioMesa1.Checked = true;
+            this.radioMesa1.Location = new System.Drawing.Point(10, 22);
+            this.radioMesa1.Name = "radioMesa1";
+            this.radioMesa1.Size = new System.Drawing.Size(72, 21);
+            this.radioMesa1.TabIndex = 0;
+            this.radioMesa1.TabStop = true;
+            this.radioMesa1.Text = "Mesa 1";
+            this.radioMesa1.UseVisualStyleBackColor = true;
             // 
             // groupPath
             // 
             this.groupPath.Controls.Add(this.pictureBox1);
             this.groupPath.Location = new System.Drawing.Point(460, 12);
             this.groupPath.Name = "groupPath";
-            this.groupPath.Size = new System.Drawing.Size(514, 530);
+            this.groupPath.Size = new System.Drawing.Size(760, 672);
             this.groupPath.TabIndex = 5;
             this.groupPath.TabStop = false;
             this.groupPath.Text = "Trayectoria";
@@ -317,63 +320,46 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(6, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.Size = new System.Drawing.Size(750, 650);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // radioArriba
+            // cmbCruces
             // 
-            this.radioArriba.AutoSize = true;
-            this.radioArriba.Location = new System.Drawing.Point(13, 257);
-            this.radioArriba.Name = "radioArriba";
-            this.radioArriba.Size = new System.Drawing.Size(63, 21);
-            this.radioArriba.TabIndex = 6;
-            this.radioArriba.Text = "arriba";
-            this.radioArriba.UseVisualStyleBackColor = true;
+            this.cmbCruces.FormattingEnabled = true;
+            this.cmbCruces.Location = new System.Drawing.Point(19, 492);
+            this.cmbCruces.Name = "cmbCruces";
+            this.cmbCruces.Size = new System.Drawing.Size(121, 24);
+            this.cmbCruces.TabIndex = 12;
             // 
-            // radioAbajo
+            // radioMesa3
             // 
-            this.radioAbajo.AutoSize = true;
-            this.radioAbajo.Location = new System.Drawing.Point(82, 257);
-            this.radioAbajo.Name = "radioAbajo";
-            this.radioAbajo.Size = new System.Drawing.Size(61, 21);
-            this.radioAbajo.TabIndex = 7;
-            this.radioAbajo.Text = "abajo";
-            this.radioAbajo.UseVisualStyleBackColor = true;
+            this.radioMesa3.AutoSize = true;
+            this.radioMesa3.Location = new System.Drawing.Point(10, 76);
+            this.radioMesa3.Name = "radioMesa3";
+            this.radioMesa3.Size = new System.Drawing.Size(72, 21);
+            this.radioMesa3.TabIndex = 2;
+            this.radioMesa3.Text = "Mesa 3";
+            this.radioMesa3.UseVisualStyleBackColor = true;
             // 
-            // radioDerecha
+            // radioMesa4
             // 
-            this.radioDerecha.AutoSize = true;
-            this.radioDerecha.Checked = true;
-            this.radioDerecha.Location = new System.Drawing.Point(151, 257);
-            this.radioDerecha.Name = "radioDerecha";
-            this.radioDerecha.Size = new System.Drawing.Size(78, 21);
-            this.radioDerecha.TabIndex = 8;
-            this.radioDerecha.TabStop = true;
-            this.radioDerecha.Text = "derecha";
-            this.radioDerecha.UseVisualStyleBackColor = true;
-            // 
-            // radioIzq
-            // 
-            this.radioIzq.AutoSize = true;
-            this.radioIzq.Location = new System.Drawing.Point(235, 257);
-            this.radioIzq.Name = "radioIzq";
-            this.radioIzq.Size = new System.Drawing.Size(84, 21);
-            this.radioIzq.TabIndex = 9;
-            this.radioIzq.Text = "izquierda";
-            this.radioIzq.UseVisualStyleBackColor = true;
+            this.radioMesa4.AutoSize = true;
+            this.radioMesa4.Location = new System.Drawing.Point(10, 103);
+            this.radioMesa4.Name = "radioMesa4";
+            this.radioMesa4.Size = new System.Drawing.Size(72, 21);
+            this.radioMesa4.TabIndex = 3;
+            this.radioMesa4.Text = "Mesa 4";
+            this.radioMesa4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 547);
-            this.Controls.Add(this.radioIzq);
-            this.Controls.Add(this.radioDerecha);
-            this.Controls.Add(this.radioAbajo);
-            this.Controls.Add(this.radioArriba);
+            this.ClientSize = new System.Drawing.Size(1242, 713);
+            this.Controls.Add(this.cmbCruces);
             this.Controls.Add(this.groupPath);
-            this.Controls.Add(this.groupAlgorithum);
+            this.Controls.Add(this.groupMesas);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.groupConnection);
@@ -387,12 +373,11 @@
             this.groupConnection.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupAlgorithum.ResumeLayout(false);
-            this.groupAlgorithum.PerformLayout();
+            this.groupMesas.ResumeLayout(false);
+            this.groupMesas.PerformLayout();
             this.groupPath.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -419,15 +404,15 @@
         private System.Windows.Forms.Button btnS7;
         private System.Windows.Forms.TextBox txtNode;
         private System.Windows.Forms.Label labNode;
-        private System.Windows.Forms.GroupBox groupAlgorithum;
-        private System.Windows.Forms.RadioButton radioLeft;
-        private System.Windows.Forms.RadioButton radioRight;
+        private System.Windows.Forms.GroupBox groupMesas;
+        private System.Windows.Forms.RadioButton radioMesa2;
+        private System.Windows.Forms.RadioButton radioMesa1;
         private System.Windows.Forms.GroupBox groupPath;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton radioArriba;
-        private System.Windows.Forms.RadioButton radioAbajo;
-        private System.Windows.Forms.RadioButton radioDerecha;
-        private System.Windows.Forms.RadioButton radioIzq;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ComboBox cmbCruces;
+        private System.Windows.Forms.RadioButton radioMesa4;
+        private System.Windows.Forms.RadioButton radioMesa3;
     }
 }
 
