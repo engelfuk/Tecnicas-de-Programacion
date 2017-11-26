@@ -52,14 +52,15 @@
             this.txtIn = new System.Windows.Forms.TextBox();
             this.port = new System.IO.Ports.SerialPort(this.components);
             this.groupMesas = new System.Windows.Forms.GroupBox();
+            this.radioMesa4 = new System.Windows.Forms.RadioButton();
+            this.radioMesa3 = new System.Windows.Forms.RadioButton();
             this.radioMesa2 = new System.Windows.Forms.RadioButton();
             this.radioMesa1 = new System.Windows.Forms.RadioButton();
             this.groupPath = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cmbCruces = new System.Windows.Forms.ComboBox();
-            this.radioMesa3 = new System.Windows.Forms.RadioButton();
-            this.radioMesa4 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupSensors.SuspendLayout();
             this.groupConnection.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -165,28 +166,30 @@
             this.cboCom.Name = "cboCom";
             this.cboCom.Size = new System.Drawing.Size(187, 24);
             this.cboCom.TabIndex = 1;
-            this.cboCom.Text = "COM6";
+            this.cboCom.Text = "Seleccionar Puerto";
             // 
             // btnConnection
             // 
+            this.btnConnection.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnection.Location = new System.Drawing.Point(7, 21);
             this.btnConnection.Name = "btnConnection";
             this.btnConnection.Size = new System.Drawing.Size(187, 43);
             this.btnConnection.TabIndex = 0;
             this.btnConnection.Text = "Conectar";
-            this.btnConnection.UseVisualStyleBackColor = true;
+            this.btnConnection.UseVisualStyleBackColor = false;
             this.btnConnection.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnFind
             // 
+            this.btnFind.BackColor = System.Drawing.SystemColors.Control;
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.Location = new System.Drawing.Point(254, 491);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(193, 42);
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Buscar";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
@@ -225,13 +228,13 @@
             // btnStop
             // 
             this.btnStop.BackColor = System.Drawing.SystemColors.Control;
-            this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.01739F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStop.ForeColor = System.Drawing.Color.Black;
             this.btnStop.Location = new System.Drawing.Point(326, 136);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(109, 40);
             this.btnStop.TabIndex = 4;
-            this.btnStop.Text = "Detener";
+            this.btnStop.Text = "Iniciar";
             this.btnStop.UseVisualStyleBackColor = false;
             this.btnStop.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -279,10 +282,30 @@
             this.groupMesas.Controls.Add(this.radioMesa1);
             this.groupMesas.Location = new System.Drawing.Point(13, 133);
             this.groupMesas.Name = "groupMesas";
-            this.groupMesas.Size = new System.Drawing.Size(200, 123);
+            this.groupMesas.Size = new System.Drawing.Size(200, 142);
             this.groupMesas.TabIndex = 4;
             this.groupMesas.TabStop = false;
             this.groupMesas.Text = "Selecciona una Mesa";
+            // 
+            // radioMesa4
+            // 
+            this.radioMesa4.AutoSize = true;
+            this.radioMesa4.Location = new System.Drawing.Point(10, 103);
+            this.radioMesa4.Name = "radioMesa4";
+            this.radioMesa4.Size = new System.Drawing.Size(72, 21);
+            this.radioMesa4.TabIndex = 3;
+            this.radioMesa4.Text = "Mesa 4";
+            this.radioMesa4.UseVisualStyleBackColor = true;
+            // 
+            // radioMesa3
+            // 
+            this.radioMesa3.AutoSize = true;
+            this.radioMesa3.Location = new System.Drawing.Point(10, 76);
+            this.radioMesa3.Name = "radioMesa3";
+            this.radioMesa3.Size = new System.Drawing.Size(72, 21);
+            this.radioMesa3.TabIndex = 2;
+            this.radioMesa3.Text = "Mesa 3";
+            this.radioMesa3.UseVisualStyleBackColor = true;
             // 
             // radioMesa2
             // 
@@ -314,7 +337,7 @@
             this.groupPath.Size = new System.Drawing.Size(760, 672);
             this.groupPath.TabIndex = 5;
             this.groupPath.TabStop = false;
-            this.groupPath.Text = "Trayectoria";
+            this.groupPath.Text = "Disposición de Mesas";
             // 
             // pictureBox1
             // 
@@ -324,40 +347,30 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // cmbCruces
+            // label1
             // 
-            this.cmbCruces.FormattingEnabled = true;
-            this.cmbCruces.Location = new System.Drawing.Point(19, 492);
-            this.cmbCruces.Name = "cmbCruces";
-            this.cmbCruces.Size = new System.Drawing.Size(121, 24);
-            this.cmbCruces.TabIndex = 12;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(254, 258);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
             // 
-            // radioMesa3
+            // richTextBox1
             // 
-            this.radioMesa3.AutoSize = true;
-            this.radioMesa3.Location = new System.Drawing.Point(10, 76);
-            this.radioMesa3.Name = "radioMesa3";
-            this.radioMesa3.Size = new System.Drawing.Size(72, 21);
-            this.radioMesa3.TabIndex = 2;
-            this.radioMesa3.Text = "Mesa 3";
-            this.radioMesa3.UseVisualStyleBackColor = true;
-            // 
-            // radioMesa4
-            // 
-            this.radioMesa4.AutoSize = true;
-            this.radioMesa4.Location = new System.Drawing.Point(10, 103);
-            this.radioMesa4.Name = "radioMesa4";
-            this.radioMesa4.Size = new System.Drawing.Size(72, 21);
-            this.radioMesa4.TabIndex = 3;
-            this.radioMesa4.Text = "Mesa 4";
-            this.radioMesa4.UseVisualStyleBackColor = true;
+            this.richTextBox1.Location = new System.Drawing.Point(19, 559);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(428, 96);
+            this.richTextBox1.TabIndex = 14;
+            this.richTextBox1.Text = "Mensajes";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1242, 713);
-            this.Controls.Add(this.cmbCruces);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupPath);
             this.Controls.Add(this.groupMesas);
             this.Controls.Add(this.groupBox3);
@@ -378,6 +391,7 @@
             this.groupPath.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -410,9 +424,10 @@
         private System.Windows.Forms.GroupBox groupPath;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ComboBox cmbCruces;
         private System.Windows.Forms.RadioButton radioMesa4;
         private System.Windows.Forms.RadioButton radioMesa3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
