@@ -75,7 +75,8 @@ namespace ProyectoTecnicasProgramacion
         //Metodo Principal
         private void AccessFrom(string action)
         {
-            //Seleccion de Trayectoria Mesa
+            
+            #region Seleccion de Trayectoria de Mesa
             if (radioMesa1.Checked)
             {
                 trayectoriaIda = mesa1Ida;
@@ -96,29 +97,42 @@ namespace ProyectoTecnicasProgramacion
                 trayectoriaIda = mesa4Ida;
                 trayectoriaRegreso = mesa4Regreso;
             }
+            #endregion
+            
+            //Impresion de Variables en Labels
+            labCruces.Text = "Cruces detectados: " + numCruce.ToString();
+            if (regreso) labViaje.Text = "Tipo de Viaje: Regreso";
+            else labViaje.Text = "Tipo de Viaje: Ida";
 
+            //Se Leen los Sensores
             ReadData(action);
+            //Muestra en pantalla en color negro los sensores que dectectan linea y en blanco los que no.
+            SensorMonitor();
+            
+            #region Se inicializan Variables
             SigueLinea1 = (S1 == "1" && S2 == "1" && S3 == "1");
             SigueLinea2 = (S1 == "1" && S2 == "1" && S3 == "0");
             SigueLinea3 = (S1 == "1" && S2 == "0" && S3 == "1");
             SigueLinea4 = (S1 == "1" && S2 == "0" && S3 == "0");
             SigueLinea5 = (S1 == "0" && S2 == "1" && S3 == "1");
-            SigueLinea6 = (S1 == "0" && S2 == "1" && S3 == "0");//Caso ideal
+            SigueLinea6 = (S1 == "0" && S2 == "1" && S3 == "0");//Sigue linea caso ideal
             SigueLinea7 = (S1 == "0" && S2 == "0" && S3 == "1");
             SigueLinea8 = (S1 == "0" && S2 == "0" && S3 == "0");
-            leftCorner  = (S4 == "0" && S5 == "0" && S6 == "1" && S7 == "1");
+            leftCorner = (S4 == "0" && S5 == "0" && S6 == "1" && S7 == "1");
             rightCorner = (S4 == "0" && S5 == "1" && S6 == "0" && S7 == "1");
-            cross       = (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "1") || (S4 == "1" && S5 == "1" && S6 == "1" && S7 == "1");
-            alley       = (S4 == "0" && S5 == "0" && S6 == "0" && S7 == "0");
+            cross = (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "1") || (S4 == "1" && S5 == "1" && S6 == "1" && S7 == "1");
+            alley = (S4 == "0" && S5 == "0" && S6 == "0" && S7 == "0");
             eleIzquierda = (S1 == "0" && S2 == "1" && S3 == "0") && (S4 == "1" && S5 == "1" && S6 == "0" && S7 == "1");
             eleDerecha = (S1 == "0" && S2 == "1" && S3 == "0") && (S4 == "1" && S5 == "0" && S6 == "1" && S7 == "1");
-            label1.Text = numCruce.ToString() + " " + regreso.ToString();
-            
+
+            #endregion
+
+            //Maquina de Estados
             switch (caso)
             {
                 //Sensores Delanteros Configuracion
                 case 0:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("4");
                     if (SigueLinea1) caso = 1;
                     if (SigueLinea2) caso = 2;
@@ -131,13 +145,13 @@ namespace ProyectoTecnicasProgramacion
                     break;
                 //Sigue Linea
                 case 1:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea1) caso = 0;
                     break;
                 //Sigue Linea
                 case 2:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea2) caso = 0;
                     if (cross) caso = 9;
@@ -147,25 +161,25 @@ namespace ProyectoTecnicasProgramacion
                     break;
                 //Sigue Linea
                 case 3:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea3) caso = 0;
                     break;
                 //Sigue Linea
                 case 4:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("2");
                     if (!SigueLinea4) caso = 0;
                     break;
                 //Sigue Linea
                 case 5:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea5) caso = 0;
                     break;
                 //Sigue Linea Caso Ideal, se detectan los cruces Ele Derecha y Ele Izquierda
                 case 6:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea6) caso = 0;
                     if (eleDerecha)
@@ -190,14 +204,14 @@ namespace ProyectoTecnicasProgramacion
                     break;
                 //Sigue Linea
                 case 7:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("3");
                     if (!SigueLinea7) caso = 0;
                     //if (rightCorner) caso = 9;
                     break;
                 //Sigue Linea Se Detectan los cruces T, callejon y se mantiene el robor en la linea
                 case 8:
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Sigue Línea";
                     
                     if (((S4 == "1" || S7 == "1") && (S5 == "0" && S6 == "0")) || (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "0"))//Correccion Trayeectoria
                     {
@@ -260,7 +274,7 @@ namespace ProyectoTecnicasProgramacion
                     break;
 
                 case 9: //Girar Derecha
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Giro Derecha";
                     SendData("3");
                     if (S2 == "1")
                     {
@@ -271,7 +285,7 @@ namespace ProyectoTecnicasProgramacion
                     
                     break;
                 case 10: //Girar Izquierda
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Giro Izquierda";
                     SendData("2");
                     if (S2 == "1")
                     {
@@ -283,11 +297,11 @@ namespace ProyectoTecnicasProgramacion
                     break;
 
                 case 11://Robot Parado
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Robot Parado";
                     SendData("4");
                     break;
                 case 12://Trayectoria Mesas, el Robot gira en las direcciones correspondientes
-                    txtNode.Text = caso.ToString();
+                    txtNode.Text = caso.ToString() + " Giro Trayec. Mesa";
                     try
                     {
                         if (regreso)
@@ -319,29 +333,19 @@ namespace ProyectoTecnicasProgramacion
                             }
                         }
                     }
-                    catch (Exception Err)
+                    catch (Exception)
                     {
-                        richTextBox1.Text = Err.ToString();
+                        richTextBox1.Text = "Mas cruces de los deseados detectados";
+                        numCruce--;
+                        caso = 12;
                     }
-                    
-                    
+                                       
                     break;
-                case 13:
-                    txtNode.Text = caso.ToString();
-                    SendData("4");
-                    MessageBox.Show("El Robot Llegó a la Mesa");
-                    regreso = true;
-                    caso = 9;
-                    break;
+                
             }
             
         }
-        private void InterruptionAccess(string action)
-        {
-            DelegateAccess access = new DelegateAccess(AccessFrom);
-            object[] args = { action };
-            base.Invoke(access, args);
-        }
+        
         public Form1()
         {
             InitializeComponent();
@@ -350,9 +354,13 @@ namespace ProyectoTecnicasProgramacion
             groupSensors.Enabled = false;
             groupMesas.Enabled = false;
             groupBox3.Enabled = false;
+            groupDisMesas.Enabled = false;
 
 
         }
+        /// <summary>
+        /// Realiza la Coneccion con Arduino
+        /// </summary>
         private void connectArduino()
         {
             //Realiza la Conección con el Microcontrolador
@@ -380,6 +388,9 @@ namespace ProyectoTecnicasProgramacion
 
             
         }
+        /// <summary>
+        /// Detecta los dispositos conectados al equipo
+        /// </summary>
         private void getAvailablePorts()
         {
             cboCom.Items.Clear();
@@ -397,7 +408,177 @@ namespace ProyectoTecnicasProgramacion
 
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Desconecta el microcontrolador del ordenador
+        /// </summary>
+        private void disconnectArduino()
+        {
+            //Realliza la desconccion entre el microcontrolador y la computadora
+            try
+            {
+                port.Write("4");
+                port.Close();
+                btnConnection.Text = "Conectar";
+                btnConnection.BackColor = Color.DeepSkyBlue;
+                groupSensors.Enabled = false;
+                groupConnection.Enabled = false;
+                groupBox3.Enabled = false;
+            }
+            catch (Exception Err)
+            {
+                richTextBox1.Text = "";
+                richTextBox1.Text = Err.ToString();
+
+            }
+
+        }
+        /// <summary>
+        /// Envia datos al microcontrolador
+        /// </summary>
+        /// <param name="data"></param>
+        private void SendData(string data)
+        {
+            try
+            {
+                port.Write(data);
+                txtMotors.Text = data;
+
+
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.ToString());
+            }
+
+
+        }
+        /// <summary>
+        /// Lee los datos del Microcontrolador
+        /// </summary>
+        /// <param name="action"></param>
+        private void ReadData(string action)
+        {
+            //La cadena recibida del microcontrolador debe ser mayor a 7, ya que tenemos 7 sensores
+            if (action.Length > 7)
+            {
+                //Recibe la cadena de caracteres del Microcontrolador
+                strIn = action;
+                //Separa la cadena de caracteres 
+                entrada = strIn.Split(separador);
+
+                //Verifica que la cadena recibida sean de los 7 sensores  en orden
+                for (int i = 0; i < entrada.Length; i++)
+                {
+                    if (entrada[i].Length == 7)
+                    {
+                        sensores = entrada[i];
+                        char[] valores = sensores.ToCharArray();
+                        txtIn.Text = sensores;
+                        S1 = valores[0].ToString();
+                        S2 = valores[1].ToString();
+                        S3 = valores[2].ToString();
+                        S4 = valores[3].ToString();
+                        S5 = valores[4].ToString();
+                        S6 = valores[5].ToString();
+                        S7 = valores[6].ToString();
+
+                        
+
+                        break;
+                    }
+                }
+
+            }
+
+
+        }
+        /// <summary>
+        /// Muestra en pantalla en color negro los sensores que dectectan linea y en blanco los que no.
+        /// </summary>
+        private void SensorMonitor()
+        {
+            
+            if (S1 == "1")
+            {
+                btnS1.BackColor = Color.Black;
+                btnS1.ForeColor = Color.White;
+            }
+            else if (S1 == "0")
+            {
+                btnS1.BackColor = Color.White;
+                btnS1.ForeColor = Color.Black;
+            }
+
+            if (S2 == "1")
+            {
+                btnS2.BackColor = Color.Black;
+                btnS2.ForeColor = Color.White;
+            }
+            else if (S2 == "0")
+            {
+                btnS2.BackColor = Color.White;
+                btnS2.ForeColor = Color.Black;
+            }
+
+            if (S3 == "1")
+            {
+                btnS3.BackColor = Color.Black;
+                btnS3.ForeColor = Color.White;
+            }
+            else if (S3 == "0")
+            {
+                btnS3.BackColor = Color.White;
+                btnS3.ForeColor = Color.Black;
+            }
+
+            if (S4 == "1")
+            {
+                btnS4.BackColor = Color.Black;
+                btnS4.ForeColor = Color.White;
+            }
+            else if (S4 == "0")
+            {
+                btnS4.BackColor = Color.White;
+                btnS4.ForeColor = Color.Black;
+            }
+
+            if (S5 == "1")
+            {
+                btnS5.BackColor = Color.Black;
+                btnS5.ForeColor = Color.White;
+            }
+            else if (S5 == "0")
+            {
+                btnS5.BackColor = Color.White;
+                btnS5.ForeColor = Color.Black;
+            }
+
+            if (S6 == "1")
+            {
+                btnS6.BackColor = Color.Black;
+                btnS6.ForeColor = Color.White;
+            }
+            else if (S6 == "0")
+            {
+                btnS6.BackColor = Color.White;
+                btnS6.ForeColor = Color.Black;
+            }
+
+            if (S7 == "1")
+            {
+                btnS7.BackColor = Color.Black;
+                btnS7.ForeColor = Color.White;
+            }
+            else if (S7 == "0")
+            {
+                btnS7.BackColor = Color.White;
+                btnS7.ForeColor = Color.Black;
+            }
+            
+        }
+        /// Botón de Coneccion
+        private void btnConnection_Click(object sender, EventArgs e)
         {
             //Habilita y Deshabiitla los controles dentro de la Interfaz
             if (btnConnection.Text == "Conectar")
@@ -422,28 +603,8 @@ namespace ProyectoTecnicasProgramacion
                 btnFind.Enabled = true;
             }
         }
-        private void disconnectArduino()
-        {
-            //Realliza la desconccion entre el microcontrolador y la computadora
-            try
-            {
-                port.Write("4");
-                port.Close();
-                btnConnection.Text = "Conectar";
-                btnConnection.BackColor = Color.DeepSkyBlue;
-                groupSensors.Enabled = false;
-                groupConnection.Enabled = false;
-                groupBox3.Enabled = false;
-            }
-            catch (Exception Err)
-            {
-                richTextBox1.Text = "";
-                richTextBox1.Text = Err.ToString();
-
-            }
-
-        }
-        private void button2_Click(object sender, EventArgs e)
+        /// Botón para buscar volver a buscar dispositivos conectados
+        private void btnFind_Click(object sender, EventArgs e)
         {
             getAvailablePorts();
             btnConnection.BackColor = Color.DeepSkyBlue;
@@ -454,12 +615,8 @@ namespace ProyectoTecnicasProgramacion
             }
 
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-
-        }
-        private void button3_Click(object sender, EventArgs e)
+        /// Botón para iniciar, detener o reanudar movimiento del robot
+        private void btnStop_Click(object sender, EventArgs e)
         {
             //Inicia el Moviemiento del Robot
             if (btnStop.Text == "Iniciar")
@@ -486,145 +643,20 @@ namespace ProyectoTecnicasProgramacion
             }
            
         }
+        ///Metodo Necesarios para el uso de Delegados
         private void Received(object sender, SerialDataReceivedEventArgs e)
         {
             InterruptionAccess(port.ReadExisting());
         }
-        private void SendData(string data)
+        ///Metodo Necesarios para el uso de Delegados
+        private void InterruptionAccess(string action)
         {
-            try
-            {
-                port.Write(data);
-                txtMotors.Text = data;
-
-
-             }
-            catch (Exception Ex)
-            {
-
-                MessageBox.Show(Ex.ToString());
-            }
-
-
+            DelegateAccess access = new DelegateAccess(AccessFrom);
+            object[] args = { action };
+            base.Invoke(access, args);
         }
-        private void ReadData(string action)
-        {
-
-            if (action.Length > 7)
-            {
-                //Recibe la cadena de caracteres del Microcontrolador
-                strIn = action;
-                //Separa la cadena de caracteres 
-                entrada = strIn.Split(separador);
 
 
-                for (int i = 0; i < entrada.Length; i++)
-                {
-                    if (entrada[i].Length == 7)
-                    {
-                        sensores = entrada[i];
-                        char[] valores = sensores.ToCharArray();
-                        txtIn.Text = sensores;
-                        S1 = valores[0].ToString();
-                        S2 = valores[1].ToString();
-                        S3 = valores[2].ToString();
-                        S4 = valores[3].ToString();
-                        S5 = valores[4].ToString();
-                        S6 = valores[5].ToString();
-                        S7 = valores[6].ToString();
-
-                        //Muestra en pantalla en color negro los sensores que dectectan linea y en blanco los que no.
-                        #region Sensors Monitor
-                        if (S1 == "1")
-                        {
-                            btnS1.BackColor = Color.Black;
-                            btnS1.ForeColor = Color.White;
-                        }
-                        else if (S1 == "0")
-                        {
-                            btnS1.BackColor = Color.White;
-                            btnS1.ForeColor = Color.Black;
-                        }
-
-                        if (S2 == "1")
-                        {
-                            btnS2.BackColor = Color.Black;
-                            btnS2.ForeColor = Color.White;
-                        }
-                        else if (S2 == "0")
-                        {
-                            btnS2.BackColor = Color.White;
-                            btnS2.ForeColor = Color.Black;
-                        }
-
-                        if (S3 == "1")
-                        {
-                            btnS3.BackColor = Color.Black;
-                            btnS3.ForeColor = Color.White;
-                        }
-                        else if (S3 == "0")
-                        {
-                            btnS3.BackColor = Color.White;
-                            btnS3.ForeColor = Color.Black;
-                        }
-
-                        if (S4 == "1")
-                        {
-                            btnS4.BackColor = Color.Black;
-                            btnS4.ForeColor = Color.White;
-                        }
-                        else if (S4 == "0")
-                        {
-                            btnS4.BackColor = Color.White;
-                            btnS4.ForeColor = Color.Black;
-                        }
-
-                        if (S5 == "1")
-                        {
-                            btnS5.BackColor = Color.Black;
-                            btnS5.ForeColor = Color.White;
-                        }
-                        else if (S5 == "0")
-                        {
-                            btnS5.BackColor = Color.White;
-                            btnS5.ForeColor = Color.Black;
-                        }
-
-                        if (S6 == "1")
-                        {
-                            btnS6.BackColor = Color.Black;
-                            btnS6.ForeColor = Color.White;
-                        }
-                        else if (S6 == "0")
-                        {
-                            btnS6.BackColor = Color.White;
-                            btnS6.ForeColor = Color.Black;
-                        }
-
-                        if (S7 == "1")
-                        {
-                            btnS7.BackColor = Color.Black;
-                            btnS7.ForeColor = Color.White;
-                        }
-                        else if (S7 == "0")
-                        {
-                            btnS7.BackColor = Color.White;
-                            btnS7.ForeColor = Color.Black;
-                        }
-
-
-                        #endregion
-
-                        break;
-                    }
-                }
-
-            }
-
-
-        }
-        
-        
 
     }
 
