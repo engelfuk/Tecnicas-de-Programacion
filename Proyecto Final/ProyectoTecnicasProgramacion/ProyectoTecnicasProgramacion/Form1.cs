@@ -41,6 +41,8 @@ namespace ProyectoTecnicasProgramacion
         bool alley;
         bool eleIzquierda;
         bool eleDerecha;
+        bool callejonFalso;
+        int contador;
 
         
         //Trayectoria de giros para llegar  las mesas
@@ -132,6 +134,7 @@ namespace ProyectoTecnicasProgramacion
             {
                 //Sensores Delanteros Configuracion
                 case 0:
+                    
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("4");
                     if (SigueLinea1) caso = 1;
@@ -145,12 +148,14 @@ namespace ProyectoTecnicasProgramacion
                     break;
                 //Sigue Linea
                 case 1:
+                    callejonFalso = false;
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea1) caso = 0;
                     break;
                 //Sigue Linea
                 case 2:
+                    callejonFalso = false;
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea2) caso = 0;
@@ -161,42 +166,46 @@ namespace ProyectoTecnicasProgramacion
                     break;
                 //Sigue Linea
                 case 3:
+                    callejonFalso = false;
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea3) caso = 0;
                     break;
                 //Sigue Linea
                 case 4:
+                    callejonFalso = false;
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("2");
                     if (!SigueLinea4) caso = 0;
                     break;
                 //Sigue Linea
                 case 5:
+                    callejonFalso = false;
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea5) caso = 0;
                     break;
                 //Sigue Linea Caso Ideal, se detectan los cruces Ele Derecha y Ele Izquierda
                 case 6:
+                    callejonFalso = false;
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("1");
                     if (!SigueLinea6) caso = 0;
                     if (eleDerecha)
                     {
-                        //SendData("4");
-                        //MessageBox.Show("Ele Derecha");
+                        SendData("1");
+                        Thread.Sleep(300);
                         SendData("3");
-                        Thread.Sleep(500);
+                        Thread.Sleep(700);
                         caso = 12;
                         return;
                     }
                     if (eleIzquierda)
                     {
-                        //SendData("4");
-                        //MessageBox.Show("Ele Izquierda");
+                        SendData("1");
+                        Thread.Sleep(300);
                         SendData("2");
-                        Thread.Sleep(500);
+                        Thread.Sleep(700);
                         caso = 12;
                         return;
                     }
@@ -204,6 +213,7 @@ namespace ProyectoTecnicasProgramacion
                     break;
                 //Sigue Linea
                 case 7:
+                    callejonFalso = false;
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     SendData("3");
                     if (!SigueLinea7) caso = 0;
@@ -213,19 +223,19 @@ namespace ProyectoTecnicasProgramacion
                 case 8:
                     txtNode.Text = caso.ToString() + " Sigue Línea";
                     
-                    if (((S4 == "1" || S7 == "1") && (S5 == "0" && S6 == "0")) || (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "0"))//Correccion Trayeectoria
+                    if (((S4 == "1" || S7 == "1") && (S5 == "0" && S6 == "0")) || (S4 == "0" && S5 == "1" && S6 == "1" && S7 == "0") || (S4 == "1" && S7 == "0" && S5 == "1" && S6 == "1"))//Correccion Trayeectoria
                     {
                         SendData("1");
                         caso = 0;
                         return;
                     }
-                    if ((S4 == "0" && S5 == "0" && S6 == "1" && S7 == "0") || (S4 == "1" && S7 == "1" && S5 == "1" && S6 == "0"))//Correccion Trayectoria
+                    if ((S4 == "0" && S5 == "0" && S6 == "1" && S7 == "0") || (S4 == "1" && S7 == "1" && S5 == "1" && S6 == "0") || (S4 == "1" && S7 == "0" && S5 == "1" && S6 == "0"))//Correccion Trayectoria
                     {
                         SendData("2");
                         caso = 0;
                         return;
                     }
-                    if ((S4 == "0" && S5 == "1" && S6 == "0" && S7 == "0") || (S4 == "1" && S7 == "1" && S5 == "0" && S6 == "1"))//Correccion Trayectoria
+                    if ((S4 == "0" && S5 == "1" && S6 == "0" && S7 == "0") || (S4 == "1" && S7 == "1" && S5 == "0" && S6 == "1") || (S4 == "1" && S7 == "0" && S5 == "0" && S6 == "1"))//Correccion Trayectoria
                     {
                         SendData("3");
                         caso = 0;
@@ -244,12 +254,25 @@ namespace ProyectoTecnicasProgramacion
                     if (cross)
                     {
                         SendData("1");
-                        Thread.Sleep(200);
+                        Thread.Sleep(300);
                         caso = 12;
                         return;
                     }
                     if (alley)
                     {
+                        if (!callejonFalso)
+                        {
+                            SendData("1");
+                            Thread.Sleep(300);
+                            callejonFalso = true;
+                            richTextBox1.Text = "";
+                            richTextBox1.Text = "Callejon Falso #: " + contador.ToString();
+                            contador++;
+                            caso = 0;
+                            return;
+                        }
+                        
+                        SendData("4");
                         //Si el Robot Llega al inicio, se resetean las variables
                         if (regreso)
                         {
@@ -445,10 +468,11 @@ namespace ProyectoTecnicasProgramacion
 
 
             }
-            catch (Exception Ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(Ex.ToString());
+                richTextBox1.Text = "";
+                richTextBox1.Text = "Error al intentar Enviar datos al microcontrolador";
             }
 
 
